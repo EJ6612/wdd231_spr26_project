@@ -1,0 +1,30 @@
+@import '../styles/header.css';
+@import '../styles/footer.css';
+@import '../styles/unified.css';
+@import '../styles/itemcard.css';
+
+body {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+main {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+
+    display: flex;
+    flex-direction: column;   /* Stack landing above feed */
+    gap: 2.5rem;
+}
+
+.item-card:hover {
+    box-shadow: unset;
+    transform: unset;
+}
+
+.item-card__link {
+    color: unset;
+    text-decoration: unset;
+}

@@ -19,6 +19,7 @@ main {
     gap: 2.5rem;
 }
 
+/* Disables the hover and link stuff */
 .item-card:hover {
     box-shadow: unset;
     transform: unset;

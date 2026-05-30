@@ -8,6 +8,9 @@
     border-radius: 12px;
     overflow: hidden;       /* Clips the image to the card's border-radius */
 
+    display: flex;
+    flex-direction: column;
+
     transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
@@ -94,4 +97,74 @@
     font-size: 0.78rem;
     color: #aaaabc;
     margin: 0;
+}
+
+.item-card__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+
+    padding: 0.75rem 1rem 1rem;
+
+    /* Pushes the actions to the bottom even when
+       card content is short                       */
+    margin-top: auto;
+
+    border-top: 1px solid var(--color-border);
+}
+
+
+/* ==============================================
+   CONTACT BUTTON
+   Circular icon button. The img is forced white
+   via filter so any dark SVG works on the teal
+   background without needing separate assets.
+   ============================================== */
+
+.item-card__contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.25rem;
+    height: 2.25rem;
+    flex-shrink: 0;         /* Never let circles squish */
+
+    background-color: var(--color-primary-subtle);
+    border: 1.5px solid transparent;
+    border-radius: 50%;     /* The circle */
+    cursor: pointer;
+
+    transition: background-color 0.2s ease,
+                border-color    0.2s ease,
+                transform       0.15s ease;
+}
+
+.item-card__contact-btn:hover {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary-dark);
+    transform: translateY(-1px);
+}
+
+.item-card__contact-btn:active {
+    transform: translateY(0);
+}
+
+/* Icon image inside the button */
+.item-card__contact-btn img {
+    display: block;
+    pointer-events: none;   /* Prevent the img from intercepting clicks */
+    user-select: none;
+
+    /* Tints a dark SVG to match the panel background.
+       On hover the background flips to teal, so the
+       icon needs to flip to white.                    */
+    filter: brightness(0) saturate(100%)
+            invert(29%) sepia(49%) saturate(600%) 
+            hue-rotate(148deg);                 /* → darkcyan tint */
+    transition: filter 0.2s ease;
+}
+
+.item-card__contact-btn:hover img {
+    filter: brightness(0) invert(1);            /* → white */
 }

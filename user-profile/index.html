@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- =============================================
+         SEO Meta Tags
+         ============================================= -->
+    <meta name="description" content="Buy and sell items with fellow students. Find textbooks, electronics, furniture, and more.">
+    <meta name="robots" content="index, follow">
+
+    <!-- =============================================
+         Open Graph Meta Tags
+         Used by Facebook, LinkedIn, Discord, Slack,
+         and most other social platforms when this
+         page is shared as a link.
+         ============================================= -->
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="#">
+    <meta property="og:title"       content="Student Store">
+    <meta property="og:description" content="Buy and sell items with fellow students.">
+    <meta property="og:image"       content="#"><!-- Recommended: 1200×630px -->
+    <meta property="og:site_name"   content="Student Store">
+    <meta property="og:locale"      content="en_CA">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Store</title>
+    <link rel="stylesheet" href="../styles/homepage.css" />
+    <link rel="stylesheet" href="../styles/user.css" />
+
+</head>
+<body>
+
+    <!-- =============================================
+         HEADER
+         Contains the site identity, search, and
+         account controls.
+         ============================================= -->
+    <header>
+
+        <h1>Student Store</h1>
+
+        <form class="search-form" role="search" action="#" method="#">
+            <input
+                id="search-input"
+                type="search"
+                name="q"
+                placeholder="Search listings..."
+                aria-label="Search listings"
+                >
+            <button type="submit" aria-label="Submit search">🔎</button>
+        </form>
+
+        <!-- TODO Add NEW ITEM button here :) -->
+
+        <!-- TODO Account (at some point, have a dropdown for this) -->
+        <nav class="account-nav" aria-label="Account">
+            <a href="#" class="btn btn--account">😶</a>
+        </nav>
+         <button class="bg-blue-600 text-white px-4 py-2 rounded-lg">
+      Account
+    </button>
+    </header>
+<section class="profile-section">
+
+  <!-- PROFILE CARD -->
+  <div class="profile-card">
+
+    <!-- AVATAR -->
+    <div class="profile-avatar">
+        <img src="../images/user.png" alt="Profile image">
+    </div>
+
+    <!-- INFO -->
+    <div class="profile-info">
+
+      <h2 id="profileName">Daniel Nthengu</h2>
+
+      <p id="profileMajor">
+        Computer Science • Senior
+      </p>
+
+      <p class="profile-meta">
+        Member since 2025
+      </p>
+
+      <!-- STATS -->
+      <div class="profile-stats">
+
+        <div>
+          <span class="stat-number">12</span>
+          <span class="stat-label">Listings</span>
+        </div>
+
+        <div>
+          <span class="stat-number">8</span>
+          <span class="stat-label">Sold</span>
+        </div>
+
+        <div>
+          <span class="stat-number">5</span>
+          <span class="stat-label">Favorites</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="profile-actions">
+
+      <button id="editProfileBtn" class="btn-primary">
+        Edit Profile
+      </button>
+
+      <button class="btn-secondary">
+        New Listing
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+    <main>
+        <!-- =============================================
+            LANDING / HERO SECTION
+            Introductory copy shown above the item feed.
+            ============================================= -->
+        <section class="landing" aria-labelledby="landing-title">
+
+            <!-- Title -->
+            <h2 id="landing-title">Your Campus Marketplace</h2>
+
+            <!-- Description -->
+            <p class="landing__description">
+                Buy and sell textbooks, electronics, furniture, and more —
+                all within our international student community.
+            </p>
+
+        </section>
+
+        <!-- Feed -->
+            <!-- Filter -->
+                <!-- Categories -->
+                <!-- Price range (?) -->
+            <!-- Items -->
+
+             <!-- =============================================
+             FEED SECTION
+             Sidebar filter + item grid.
+             Items are injected by feed.js at runtime;
+             one static example card is included below
+             as a template reference for the JS renderer.
+             ============================================= -->
+        <section class="feed" aria-labelledby="feed-title">
+            <h2 id="feed-title" class="visually-hidden">Browse Listings</h2>
+
+            <!-- -----------------------------------------
+                 FILTER PANEL
+                 JS should read these controls and re-query
+                 / re-render the #item-grid on change.
+                 TODO at some point, make collapsable
+                 ----------------------------------------- -->
+            <aside class="filter-panel" aria-label="Filter listings">
+                <h3 class="filter-panel__heading">Filter</h3>
+
+                <!-- Categories
+                     Add / remove <li> items to match your
+                     category taxonomy in the database.      -->
+                <fieldset class="filter-panel__group">
+                    <legend>Category</legend>
+                    <ul class="filter-panel__list" role="list">
+                        <li>
+                            <label>
+                                <input type="checkbox" name="category" value="all" checked>
+                                All
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="category" value="textbooks">
+                                Textbooks
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="category" value="electronics">
+                                Electronics
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="category" value="furniture">
+                                Furniture
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="category" value="clothing">
+                                Clothing
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="category" value="other">
+                                Other
+                            </label>
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <!-- Price Range
+                     JS should debounce the 'input' event
+                     and update the #price-display label.    -->
+                <fieldset class="filter-panel__group">
+                    <legend>Price Range</legend>
+                    <div class="price-range">
+                        <label for="price-min" class="visually-hidden">Minimum price</label>
+                        <input
+                            id="price-min"
+                            type="number"
+                            name="price_min"
+                            min="0"
+                            placeholder="Min $"
+                            aria-label="Minimum price"
+                        >
+                        <span aria-hidden="true">–</span>
+                        <label for="price-max" class="visually-hidden">Maximum price</label>
+                        <input
+                            id="price-max"
+                            type="number"
+                            name="price_max"
+                            min="0"
+                            placeholder="Max $"
+                            aria-label="Maximum price"
+                        >
+                    </div>
+                </fieldset>
+
+                <button type="button" class="btn btn--apply-filters">Apply Filters</button>
+            </aside>
+
+
+            <!-- -----------------------------------------
+                 ITEM GRID
+                 JS (feed.js) empties this container and
+                 injects rendered item cards on page load
+                 and whenever filters change.
+
+                 The card below is a single static EXAMPLE
+                 showing the expected card structure. The
+                 JS renderer should produce identical markup
+                 for each item it injects.
+                 ----------------------------------------- -->
+            <ul id="item-grid" class="item-grid" role="list" aria-label="Listings">
+
+                <!-- ✦ EXAMPLE CARD — replicated by JS for each listing ✦
+                     Data attributes (data-id, data-category) can be used
+                     by JS for filtering / routing without extra DOM queries. -->
+                <li class="item-card" data-id="001" data-category="textbooks">
+                    <a href="./item-details/index.html" class="item-card__link">
+
+                        <!-- Item thumbnail -->
+                        <img
+                            class="item-card__image"
+                            src="https://placehold.co/400x300?text=Item+Image"
+                            alt="Calculus Textbook, 3rd Edition"
+                            width="400"
+                            height="300"
+                            loading="lazy"
+                        >
+
+                        <div class="item-card__body">
+                            <!-- Category badge -->
+                            <span class="item-card__category">Textbooks</span>
+
+                            <!-- Item name -->
+                            <h3 class="item-card__title">Calculus Textbook, 3rd Edition</h3>
+
+                            <!-- Short description -->
+                            <p class="item-card__description">
+                                Lightly used. A few highlights in Chapter 4, otherwise clean.
+                            </p>
+
+                            <!-- Price -->
+                            <p class="item-card__price">$24.00</p>
+
+                            <!-- Seller info -->
+                            <p class="item-card__seller">
+                                <span class="visually-hidden">Sold by</span>
+                                Jane D. · 2 days ago
+                            </p>
+                        </div>
+
+                    </a>
+
+                    <!-- Contact actions
+                    Sits OUTSIDE .item-card__link so the buttons
+                    don't trigger the card's navigation.           -->
+                    <div class="item-card__actions">
+                        <button
+                            class="item-card__contact-btn"
+                            aria-label="Send a message via WhatsApp"
+                            type="button"
+                        >
+                            <img src="https://cdn.simpleicons.org/whatsapp" alt="" width="18" height="18">
+                        </button>
+                        <button
+                            class="item-card__contact-btn"
+                            aria-label="Send a message via Facebook Messenger"
+                            type="button"
+                        >
+                            <img src="https://cdn.simpleicons.org/messenger" alt="" width="18" height="18">
+                        </button>
+                        <button
+                            class="item-card__contact-btn"
+                            aria-label="Email seller"
+                            type="button"
+                        >
+                            <img src="https://cdn.simpleicons.org/gmail" alt="" width="18" height="18">
+                        </button>
+                    </div>
+
+                </li>
+                <!-- End example card -->
+
+            </ul>
+            <!-- End #item-grid -->
+
+        </section>
+        <!-- End .feed -->
+
+    </main>
+
+    <!-- =============================================
+         FOOTER
+         ============================================= -->
+    <footer>
+
+        <!-- Site name / brand -->
+        <p class="footer__brand">Student Store</p>
+
+        <!-- Copyright — JS can replace the year dynamically:
+             document.querySelector('.footer__year').textContent = new Date().getFullYear(); -->
+        <p class="footer__copyright">
+            &copy; <span class="footer__year">2026</span> Student Store. All rights reserved.
+        </p>
+
+        <!-- Support / legal links -->
+        <nav class="footer__links" aria-label="Support and legal links">
+            <ul role="list">
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/terms">Terms of Use</a></li>
+            </ul>
+        </nav>
+
+    </footer>
+    
+</body>
+</html>

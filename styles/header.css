@@ -133,3 +133,160 @@ header .btn--account:hover {
         font-size: 0;
     }
 }
+/* just added*/
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    padding: 0 2rem;
+    height: 4rem;
+
+    background-color: cadetblue;
+    color: white;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    box-shadow: 0 2px 8px #00000020;
+}
+
+/* BRAND */
+header h1 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    flex: 0 0 auto;
+    margin: 0;
+}
+
+header h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+/* SEARCH CENTER */
+.search-form {
+    display: flex;
+    flex: 1;
+    max-width: 32rem;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 0 0.875rem;
+    height: 2.25rem;
+
+    border: none;
+    outline: none;
+}
+
+.search-form button {
+    height: 2.25rem;
+    padding: 0 1rem;
+
+    border: none;
+    cursor: pointer;
+    background: white;
+}
+
+/* RIGHT SIDE */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* NEW ITEM BUTTON */
+.btn-new-item {
+    background: white;
+    color: cadetblue;
+
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+/* ACCOUNT BUTTON */
+.btn--account {
+    height: 2.25rem;
+    width: 2.25rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 6px;
+
+    background: white;
+    cursor: pointer;
+}
+
+/* DROPDOWN */
+.account-nav {
+    position: relative;
+}
+
+.account-dropdown {
+    position: absolute;
+    right: 0;
+    top: 2.75rem;
+
+    width: 220px;
+    background: white;
+    color: black;
+
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+    overflow: hidden;
+    z-index: 999;
+}
+
+.hidden {
+    display: none;
+}
+
+.dropdown-header {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.75rem;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #ddd;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.75rem;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-item:hover {
+    background: #f5f5f5;
+}
+
+.divider {
+    height: 1px;
+    background: #eee;
+}
+
+.dropdown-logout {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    background: none;
+    text-align: left;
+    color: red;
+    cursor: pointer;
+}

@@ -2,6 +2,7 @@
     {
         "ITEM_NAME" : "",
         "DESCRIPTION" : "",
+        "ITEM_ID" : "",
         "IMAGE" : "",
         "CATEGORIES" : ["", ""], 
         "CURRENCY" : "",

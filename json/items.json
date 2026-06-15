@@ -1,0 +1,29 @@
+[ 
+    {
+        "ITEM_NAME" : "Calculus Textbook, 3rd Edition",
+        "ITEM_ID" : "001",
+        "DESCRIPTION" : "Lightly used. A few highlights in Chapter 4, otherwise clean.",
+        "IMAGE" : "https://placehold.co/400x300?text=Item+Image",
+        "CATEGORIES" : ["Textbooks", "Mathematics"], 
+        "CURRENCY" : "CAD",
+        "PRICE" : 23.99,
+        "SELLER_NAME" : "Jane D.",
+        "SELLER_ID" : "janed99",
+        "DATE_LISTED" : "12-06-2026",
+        "CONTACT" : [
+            {   "PLATFORM" : "WhatsApp",
+                "LINK" : "",
+                "ICON_CODE" : "whatsapp"
+            },
+            {   "PLATFORM" : "Facebook Messenger",
+                "LINK" : "",
+                "ICON_CODE" : "messenger"
+            },
+            {   "PLATFORM" : "Email",
+                "LINK" : "",
+                "ICON_CODE" : "gmail"
+            }
+        ]
+
+    }
+]

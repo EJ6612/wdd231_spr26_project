@@ -1,0 +1,24 @@
+[ 
+    {
+        "ITEM_NAME" : "",
+        "DESCRIPTION" : "",
+        "ITEM_ID" : "",
+        "IMAGE" : "",
+        "CATEGORIES" : ["", ""], 
+        "CURRENCY" : "",
+        "PRICE" : 0.00,
+        "SELLER_NAME" : "",
+        "DATE_LISTED" : "",
+        "CONTACT" : [
+            {   "PLATFORM" : "",
+                "LINK" : "",
+                "ICON_CODE" : ""
+            },
+            {   "PLATFORM" : "",
+                "LINK" : "",
+                "ICON_CODE" : ""
+            }
+        ]
+
+    }
+]

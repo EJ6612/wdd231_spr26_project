@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusCart - Sell an Item</title>
+
+    <!-- Tailwind (utility framework) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles/header.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+</head>
+
+
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+
+<!-- ========================= HEADER ========================= -->
+<header>
+
+    <!-- Logo / Brand -->
+    <h1>
+        <a href="../index.html">Student Store</a>
+    </h1>
+
+    <!-- Search bar -->
+    <form class="search-form" role="search" action="#" method="get">
+        <input
+            id="search-input"
+            type="search"
+            name="q"
+            placeholder="Search listings..."
+            aria-label="Search listings">
+
+        <button type="submit" aria-label="Submit search">
+            🔎
+        </button>
+    </form>
+
+    <!-- Account / User actions -->
+    <div class="header-actions">
+        <button class="flex items-center gap-2 px-4 py-2 rounded-full text-primary font-bold">
+            <span class="material-symbols-outlined">account_circle</span>
+            <span>Account</span>
+        </button>
+    </div>
+
+</header>
+
+<!-- ========================= MAIN ========================= -->
+<main class="flex-grow max-w-7xl mx-auto w-full px-6 py-10">
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="lg:col-span-4 space-y-6 sticky top-24">
+
+            <div>
+                <h1 class="text-3xl font-bold">Sell an Item</h1>
+                <p class="text-on-surface-variant mt-2">
+                    Turn your campus clutter into cash. Reach thousands of students instantly.
+                </p>
+            </div>
+
+            <div class="bg-surface-container-low rounded-xl p-5 space-y-4">
+
+                <div class="flex gap-3 items-start">
+                    <div class="text-primary">✔</div>
+                    <div>
+                        <p class="font-semibold text-primary">Step 1</p>
+                        <p class="text-sm">Item Details</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 items-start opacity-60">
+                    <div>2</div>
+                    <div>
+                        <p class="text-sm">Pricing & Shipping</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="bg-green-50 border border-green-200 rounded-xl p-4 flex gap-3">
+                <span class="material-symbols-outlined text-green-600">verified_user</span>
+                <div class="text-sm">
+                    <p class="font-semibold">Campus Safety First</p>
+                    <p>Meet in public places and use in-app chat only.</p>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- ================= FORM ================= -->
+        <section class="lg:col-span-8">
+
+            <form class="bg-white border rounded-2xl shadow-sm p-8 space-y-6">
+
+                <!-- Photos -->
+                <div>
+                    <label class="font-semibold">Photos</label>
+
+                    <div class="mt-2 border-2 border-dashed rounded-xl p-8 text-center hover:border-primary transition">
+                        <span class="material-symbols-outlined text-4xl text-primary">add_a_photo</span>
+                        <p class="mt-2 font-medium">Drag & drop or click to upload</p>
+                        <p class="text-sm text-gray-500">Up to 5 images</p>
+                        <input type="file" multiple accept="image/*" class="hidden">
+                    </div>
+                </div>
+
+                <!-- Title -->
+                <div>
+                    <label class="font-semibold">Item Title</label>
+                    <input class="w-full mt-2 border rounded-lg p-3" placeholder="Organic Chemistry 8th Edition">
+                </div>
+
+                <!-- Category + Price -->
+                <div class="grid md:grid-cols-2 gap-4">
+
+                    <div>
+                        <label class="font-semibold">Category</label>
+                        <select class="w-full mt-2 border rounded-lg p-3">
+                            <option>Select Category</option>
+                            <option>Textbooks</option>
+                            <option>Electronics</option>
+                            <option>Furniture</option>
+                            <option>Clothing</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="font-semibold">Price ($)</label>
+                        <input type="number" class="w-full mt-2 border rounded-lg p-3" placeholder="0.00">
+                    </div>
+
+                </div>
+
+                <!-- Condition -->
+                <div>
+                    <label class="font-semibold">Condition</label>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-3">
+
+                        <label class="border rounded-lg p-3 text-center cursor-pointer hover:border-primary">
+                            <input type="radio" name="condition" checked>
+                            <div>New</div>
+                        </label>
+
+                        <label class="border rounded-lg p-3 text-center cursor-pointer hover:border-primary">
+                            <input type="radio" name="condition">
+                            <div>Like New</div>
+                        </label>
+
+                        <label class="border rounded-lg p-3 text-center cursor-pointer hover:border-primary">
+                            <input type="radio" name="condition">
+                            <div>Good</div>
+                        </label>
+
+                        <label class="border rounded-lg p-3 text-center cursor-pointer hover:border-primary">
+                            <input type="radio" name="condition">
+                            <div>Fair</div>
+                        </label>
+
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label class="font-semibold">Description</label>
+                    <textarea rows="5" class="w-full mt-2 border rounded-lg p-3" placeholder="Describe your item..."></textarea>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex flex-col md:flex-row justify-between gap-4 pt-4">
+
+                    <button type="button" class="px-5 py-3 rounded-lg border hover:bg-gray-100">
+                        Save Draft
+                    </button>
+
+                    <button type="submit" class="px-5 py-3 rounded-lg bg-primary text-white font-semibold flex items-center justify-center gap-2 hover:opacity-90">
+                        Post Listing
+                        <span class="material-symbols-outlined">send</span>
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </div>
+
+</main>
+
+<!-- ========================= FOOTER (IMPROVED) ========================= -->
+<footer class="bg-white border-t mt-12">
+
+    <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
+
+        <p class="text-sm text-gray-500">
+            © 2026 Student Store. All rights reserved.
+        </p>
+
+        <div class="flex gap-6 text-sm">
+            <a href="#" class="text-gray-600 hover:text-primary">About</a>
+            <a href="#" class="text-gray-600 hover:text-primary">Contact</a>
+            <a href="#" class="text-gray-600 hover:text-primary">Privacy</a>
+            <a href="#" class="text-gray-600 hover:text-primary">Terms</a>
+        </div>
+
+    </div>
+
+</footer>
+<script src="js/sell.js"></script>
+
+</body>
+
+</html>

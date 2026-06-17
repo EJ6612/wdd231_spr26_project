@@ -1,7 +1,7 @@
 import data from "../json/items.json" with {type : 'json'};
 
 const feed = document.querySelector("main");
-const itemData = data[0];
+const itemData = data[1];
 
 let item = `<li class="item-card" item-id="001" data-category="textbooks">
                 <a class="item-card__link">
@@ -48,22 +48,17 @@ let item = `<li class="item-card" item-id="001" data-category="textbooks">
                             class="item-card__contact-btn"
                             aria-label="Send a message via ${itemData.CONTACT[0].PLATFORM}"
                             type="button"
+                            onclick="window.location.href = '${itemData.CONTACT[0].LINK}'"
                         >
                             <img src="https://cdn.simpleicons.org/${itemData.CONTACT[0].ICON_CODE}" alt="" width="18" height="18">
                         </button>
                         <button
                             class="item-card__contact-btn"
                             aria-label="Send a message via ${itemData.CONTACT[1].PLATFORM}"
-                            type="button"
+                            type="button" 
+                            onclick="window.location.href = '${itemData.CONTACT[1].LINK}'"
                         >
                             <img src="https://cdn.simpleicons.org/${itemData.CONTACT[1].ICON_CODE}" alt="" width="18" height="18">
-                        </button>
-                        <button
-                            class="item-card__contact-btn"
-                            aria-label="Send a message via ${itemData.CONTACT[2].PLATFORM}"
-                            type="button"
-                        >
-                            <img src="https://cdn.simpleicons.org/${itemData.CONTACT[2].ICON_CODE}" alt="" width="18" height="18">
                         </button>
                     </div>
             </li>`;

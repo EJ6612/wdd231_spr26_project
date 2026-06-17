@@ -24,6 +24,27 @@
                 "ICON_CODE" : "gmail"
             }
         ]
+    },
 
+    {
+        "ITEM_NAME" : "Notebook",
+        "DESCRIPTION" : "Used notebook. Has notes from some math class I don't remember taking.",
+        "ITEM_ID" : "ej6612-2612062051",
+        "IMAGE" : "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fc1.staticflickr.com%2F1%2F45%2F149754989_e7f517336c_b.jpg&f=1&nofb=1&ipt=347bd625476456dd54cc036a4057433496ea9b1f61ae3b97c5c89d523234c03a",
+        "CATEGORIES" : ["Notebook", "Used"], 
+        "CURRENCY" : "CAD",
+        "PRICE" : 6.70,
+        "SELLER_NAME" : "Elijah D.",
+        "DATE_LISTED" : "12-06-2026",
+        "CONTACT" : [
+            {   "PLATFORM" : "Signal",
+                "LINK" : "https://signal.me/#eu/xdLQtaGbl3JxyqH9MsisSLpiSZ9QVTL_hfhGgWi8-ra02eOLF_JJPLB-I8vIIctf",
+                "ICON_CODE" : "signal"
+            },
+            {   "PLATFORM" : "Email",
+                "LINK" : "mailto:elijah.dodge@outlook.com",
+                "ICON_CODE" : "gmail"
+            }
+        ]
     }
 ]

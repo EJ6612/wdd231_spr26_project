@@ -22,6 +22,18 @@
             {   "PLATFORM" : "Email",
                 "LINK" : "",
                 "ICON_CODE" : "gmail"
+            },
+            {   "PLATFORM" : "Signal",
+                "LINK" : "",
+                "ICON_CODE" : "signal"
+            },
+            {   "PLATFORM" : "Line",
+                "LINK" : "",
+                "ICON_CODE" : "line"
+            },
+            {   "PLATFORM" : "Insta",
+                "LINK" : "",
+                "ICON_CODE" : "instagram"
             }
         ]
     },

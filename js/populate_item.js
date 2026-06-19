@@ -6,7 +6,37 @@ export function populate_item_card(data) {
 
     itemLI.className = "item-card";
 
-    let html = `<a class="item-card__link">
+    const contactsHTML = (data.CONTACT || []).map(contact =>
+        `<button
+            class="item-card__contact-btn"
+            aria-label="Send a message via ${contact.PLATFORM}"
+            type="button"
+            onclick="window.location.href = '${contact.LINK}'"
+            >
+            <img src="https://cdn.simpleicons.org/${contact.ICON_CODE}" alt="" width="18" height="18">
+        </button>`
+    ).join("");
+
+    // contact methods can be the following:
+    /*    Name          |  code
+        - WhatsApp      |  whatsapp
+        - FB Messenger  |  messenger
+        - Email         |  gmail
+        - Signal        |  signal
+        - LINE          |  line
+        - Instagram     |  instagram
+        - Discord       |  discord
+        - Telegram      |  telegram
+        - iMessage      |  imessage
+        - SMS/RCS       |  googlemessages
+    */
+   // Card can support up to 6 contact methods, but recommended to keep at maximum 3
+
+    const categoriesHTML = (data.CATEGORIES || []).map(category =>
+        `<span class="item-card__category">${category}</span>`
+    ).join("");
+
+    let html = `<a href="../item-details/index.html" class="item-card__link">
 
                     <!-- Item thumbnail -->
                     <img
@@ -20,7 +50,9 @@ export function populate_item_card(data) {
 
                     <div class="item-card__body">
                         <!-- Category badge -->
-                        <span class="item-card__category">Textbooks</span>
+                        <div class="item-card__categories">
+                            ${categoriesHTML}
+                        </div>
 
                         <!-- Item name -->
                         <h3 class="item-card__title">${itemData.ITEM_NAME}</h3>
@@ -46,22 +78,7 @@ export function populate_item_card(data) {
                     Sits OUTSIDE .item-card__link so the buttons
                     don't trigger the card's navigation.           -->
                     <div class="item-card__actions">
-                        <button
-                            class="item-card__contact-btn"
-                            aria-label="Send a message via ${itemData.CONTACT[0].PLATFORM}"
-                            type="button"
-                            onclick="window.location.href = '${itemData.CONTACT[0].LINK}'"
-                        >
-                            <img src="https://cdn.simpleicons.org/${itemData.CONTACT[0].ICON_CODE}" alt="" width="18" height="18">
-                        </button>
-                        <button
-                            class="item-card__contact-btn"
-                            aria-label="Send a message via ${itemData.CONTACT[1].PLATFORM}"
-                            type="button" 
-                            onclick="window.location.href = '${itemData.CONTACT[1].LINK}'"
-                        >
-                            <img src="https://cdn.simpleicons.org/${itemData.CONTACT[1].ICON_CODE}" alt="" width="18" height="18">
-                        </button>
+                    ${contactsHTML}
                     </div>`;
 
     itemLI.innerHTML = html;

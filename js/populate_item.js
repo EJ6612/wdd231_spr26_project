@@ -36,7 +36,9 @@ export function populate_item_card(data) {
         `<span class="item-card__category">${category}</span>`
     ).join("");
 
-    let html = `<a href="../item-details/index.html" class="item-card__link">
+    let html = `<a 
+    href="../item-details/index.html?id=${encodeURIComponent(itemData.ITEM_ID)}" 
+    class="item-card__link">
 
                     <!-- Item thumbnail -->
                     <img

@@ -1,10 +1,12 @@
-import data from "../json/items.json" with {type : 'json'};
+export function populate_item_card(data) {
 
-const feed = document.querySelector("main");
-const itemData = data[1];
+    const itemData = data;
 
-let item = `<li class="item-card" item-id="001" data-category="textbooks">
-                <a class="item-card__link">
+    const itemLI = document.createElement('li');
+
+    itemLI.className = "item-card";
+
+    let html = `<a class="item-card__link">
 
                     <!-- Item thumbnail -->
                     <img
@@ -60,7 +62,8 @@ let item = `<li class="item-card" item-id="001" data-category="textbooks">
                         >
                             <img src="https://cdn.simpleicons.org/${itemData.CONTACT[1].ICON_CODE}" alt="" width="18" height="18">
                         </button>
-                    </div>
-            </li>`;
+                    </div>`;
 
-            feed.innerHTML = item;
+    itemLI.innerHTML = html;
+    return itemLI;
+}

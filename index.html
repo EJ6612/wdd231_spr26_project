@@ -26,6 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Store</title>
     <link rel="stylesheet" href="./styles/homepage.css" />
+    <script type="module" src="./js/populate_feed.js" defer></script>
 </head>
 <body>
 
@@ -193,76 +194,6 @@
                  for each item it injects.
                  ----------------------------------------- -->
             <ul id="item-grid" class="item-grid" role="list" aria-label="Listings">
-
-                <!-- ✦ EXAMPLE CARD — replicated by JS for each listing ✦
-                     Data attributes (data-id, data-category) can be used
-                     by JS for filtering / routing without extra DOM queries. -->
-                <li class="item-card" data-id="001" data-category="textbooks">
-                    <a href="./item-details/index.html" class="item-card__link">
-
-                        <!-- Item thumbnail -->
-                        <img
-                            class="item-card__image"
-                            src="https://placehold.co/400x300?text=Item+Image"
-                            alt="Calculus Textbook, 3rd Edition"
-                            width="400"
-                            height="300"
-                            loading="lazy"
-                        >
-
-                        <div class="item-card__body">
-                            <!-- Category badge -->
-                            <span class="item-card__category">Textbooks</span>
-
-                            <!-- Item name -->
-                            <h3 class="item-card__title">Calculus Textbook, 3rd Edition</h3>
-
-                            <!-- Short description -->
-                            <p class="item-card__description">
-                                Lightly used. A few highlights in Chapter 4, otherwise clean.
-                            </p>
-
-                            <!-- Price -->
-                            <p class="item-card__price">$24.00</p>
-
-                            <!-- Seller info -->
-                            <p class="item-card__seller">
-                                <span class="visually-hidden">Sold by</span>
-                                Jane D. · 2 days ago
-                            </p>
-                        </div>
-
-                    </a>
-
-                    <!-- Contact actions
-                    Sits OUTSIDE .item-card__link so the buttons
-                    don't trigger the card's navigation.           -->
-                    <div class="item-card__actions">
-                        <button
-                            class="item-card__contact-btn"
-                            aria-label="Send a message via WhatsApp"
-                            type="button"
-                        >
-                            <img src="https://cdn.simpleicons.org/whatsapp" alt="" width="18" height="18">
-                        </button>
-                        <button
-                            class="item-card__contact-btn"
-                            aria-label="Send a message via Facebook Messenger"
-                            type="button"
-                        >
-                            <img src="https://cdn.simpleicons.org/messenger" alt="" width="18" height="18">
-                        </button>
-                        <button
-                            class="item-card__contact-btn"
-                            aria-label="Email seller"
-                            type="button"
-                        >
-                            <img src="https://cdn.simpleicons.org/gmail" alt="" width="18" height="18">
-                        </button>
-                    </div>
-
-                </li>
-                <!-- End example card -->
 
             </ul>
             <!-- End #item-grid -->

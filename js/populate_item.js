@@ -21,7 +21,7 @@ export function populate_item_card(data) {
     /*    Name          |  code
         - WhatsApp      |  whatsapp
         - FB Messenger  |  messenger
-        - Email         |  gmail
+        - Email         |  gmail <- required
         - Signal        |  signal
         - LINE          |  line
         - Instagram     |  instagram

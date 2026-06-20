@@ -8,6 +8,7 @@
         "CURRENCY" : "",
         "PRICE" : 0.00,
         "SELLER_NAME" : "",
+        "USER_ID" : "",
         "DATE_LISTED" : "",
         "CONTACT" : [
             {   "PLATFORM" : "",

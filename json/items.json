@@ -47,6 +47,7 @@
         "CURRENCY" : "CAD",
         "PRICE" : 6.70,
         "SELLER_NAME" : "Elijah D.",
+        "SELLER_ID" : "cool-peacock-9781",
         "DATE_LISTED" : "12-06-2026",
         "CONTACT" : [
             {   "PLATFORM" : "Signal",
@@ -58,5 +59,27 @@
                 "ICON_CODE" : "gmail"
             }
         ]
+    },
+    {
+        "ITEM_NAME" : "",
+        "DESCRIPTION" : "",
+        "ITEM_ID" : "",
+        "IMAGE" : "",
+        "CATEGORIES" : ["", ""], 
+        "CURRENCY" : "",
+        "PRICE" : 0.00,
+        "SELLER_NAME" : "",
+        "DATE_LISTED" : "",
+        "CONTACT" : [
+            {   "PLATFORM" : "",
+                "LINK" : "",
+                "ICON_CODE" : ""
+            },
+            {   "PLATFORM" : "",
+                "LINK" : "",
+                "ICON_CODE" : ""
+            }
+        ]
+
     }
 ]

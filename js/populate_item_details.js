@@ -37,13 +37,14 @@ if (!item) {
         .join("");
 
     main.innerHTML = `
-        <section class="item-details">
+        <a class="item-card__link">
             <img
-                class="item-details__image"
+                class="item-card__image"
                 src="${item.IMAGE}"
                 alt="Photo of ${item.ITEM_NAME}"
                 width="600"
                 height="450"
+                loading="lazy"
             >
 
             <div class="item-details__content">
@@ -66,6 +67,6 @@ if (!item) {
                     ${contactsHTML}
                 </div>
             </div>
-        </section>
+        </a>
     `;
 }

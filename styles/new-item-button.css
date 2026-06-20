@@ -1,0 +1,32 @@
+@import './unified.css';
+
+.floating-add-btn {
+    position: fixed;
+    right: 24px;
+    bottom: 100px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: darkcyan;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.33);
+    z-index: 1000;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.floating-add-btn:hover {
+    transform: scale(1.12);
+    background: white;
+    color: darkcyan;
+}
+
+.floating-add-btn:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 4px;
+}

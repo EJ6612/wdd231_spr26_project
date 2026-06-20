@@ -3,6 +3,7 @@
 @import './footer.css';
 @import './unified.css';
 @import './itemcard.css';
+@import './new-item-button.css';
 
 body {
     margin: 0;

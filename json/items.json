@@ -61,25 +61,25 @@
         ]
     },
     {
-        "ITEM_NAME" : "",
-        "DESCRIPTION" : "",
-        "ITEM_ID" : "",
-        "IMAGE" : "",
-        "CATEGORIES" : ["", ""], 
-        "CURRENCY" : "",
-        "PRICE" : 0.00,
-        "SELLER_NAME" : "",
-        "DATE_LISTED" : "",
+        "ITEM_NAME" : "#2 Pencil (Singular)",
+        "DESCRIPTION" : "One (1) pencil, #2.",
+        "ITEM_ID" : "123",
+        "IMAGE" : "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthf.bing.com%2Fth%2Fid%2FOIP.rQhLngB6xveXsp14kVNcDAHaFh%3Fcb%3Dthfc1falcon2%26pid%3DApi&f=1&ipt=f4450172a5c08838d376c6c99051eb30c3960e32c4c8bf328729cb735af73361",
+        "CATEGORIES" : ["Utensil"], 
+        "CURRENCY" : "USD",
+        "PRICE" : 1.99,
+        "SELLER_NAME" : "Elijah D.",
+        "SELLER_ID" : "cool-peacock-9781",
+        "DATE_LISTED" : "19-06-2026",
         "CONTACT" : [
-            {   "PLATFORM" : "",
-                "LINK" : "",
-                "ICON_CODE" : ""
+            {   "PLATFORM" : "Signal",
+                "LINK" : "https://signal.me/#eu/xdLQtaGbl3JxyqH9MsisSLpiSZ9QVTL_hfhGgWi8-ra02eOLF_JJPLB-I8vIIctf",
+                "ICON_CODE" : "signal"
             },
-            {   "PLATFORM" : "",
-                "LINK" : "",
-                "ICON_CODE" : ""
+            {   "PLATFORM" : "Email",
+                "LINK" : "mailto:elijah.dodge@outlook.com",
+                "ICON_CODE" : "gmail"
             }
         ]
-
     }
 ]

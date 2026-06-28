@@ -1,0 +1,58 @@
+.sell-modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 55, 55, 0.5);
+}
+
+.sell-modal.open {
+    display: block;
+}
+
+.sell-modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid darkcyan;
+    width: 80%;
+    border-radius: 12px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: darkred;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sell-modal-content label {
+    display: block;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.sell-photo-upload input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sell-photo-upload label {
+    display: inline-block;
+    border: 2px dashed var(--color-primary);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    
+}

@@ -27,6 +27,7 @@
     <title>Student Store</title>
     <link rel="stylesheet" href="./styles/homepage.css" />
     <script type="module" src="./js/populate_home.js" defer></script>
+    <script type="module" src="./js/new-item-modal.js" defer></script>
 </head>
 <body>
 
@@ -49,8 +50,6 @@
                 >
             <button type="submit" aria-label="Submit search">🔎</button>
         </form>
-
-        <!-- TODO Add NEW ITEM button here :) -->
 
         <!-- TODO Account (at some point, have a dropdown for this) -->
         <nav class="account-nav" aria-label="Account">
@@ -195,9 +194,98 @@
         </section>
         <!-- End .feed -->
 
-        <a href="../sell-new-item" class="floating-add-btn" aria-label="Add new item">
+        <a href="#" class="floating-add-btn" aria-label="Add new item">
             ＋
         </a>
+
+        <div
+            id="sell-modals" 
+            class="sell-modals"
+            role="dialog"
+            aria-labelledby="modal-title"
+            aria-modal="true"
+            aria-hidden="true">
+
+            <section class="sell-modal-content">
+                <span class="close-button" aria-label="Close modal">&times;</span>
+                <h2 id="modal-title">Sell New Item</h2>
+                <form>
+                    <!-- Item Name -->
+                    <div>
+                        <label>Item Name</label>
+                        <input>
+                    </div>
+
+                    <!-- Photos -->
+                    <div>
+                        <div class="sell-photo-upload">
+                            <label>Photos</label>
+                                
+                                <input type="file" multiple accept="image/*">
+                        </div>
+                    </div>
+
+                    <!-- Price -->
+                    <div>
+                        <label>Price</label>
+                        <input type="number" placeholder="0.00">
+                        <select>
+                            <option>CAD 🇨🇦</option>
+                        </select>
+                    </div>
+
+                    <!-- Category -->
+                    <div>
+                        <label>Category</label>
+                        <select>
+                            <option>Select Category</option>
+                            <option>Textbooks</option>
+                            <option>Electronics</option>
+                            <option>Furniture</option>
+                            <option>Clothing</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Condition -->
+                    <div>
+                        <label>Condition</label>
+                        <div>
+                            <label>
+                                <input type="radio" name="condition">
+                                <div>New</div>
+                            </label>
+                            <label>
+                                <input type="radio" name="condition">
+                                <div>Like New</div>
+                            </label>
+                            <label>
+                                <input type="radio" name="condition">
+                                <div>Good</div>
+                            </label>
+                            <label>
+                                <input type="radio" name="condition">
+                                <div>Fair</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div>
+                        <label>Description</label>
+                        <textarea rows="5" placeholder="Describe your item..."></textarea>
+                    </div>
+
+                    <!-- Actions -->
+                    <div>
+                        <button>Save Draft</button>
+                        <button>Post Listing</button>
+                    </div>
+
+                </form>
+            </section>
+
+        </div>
 
     </main>
 

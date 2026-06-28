@@ -290,3 +290,10 @@ header h1 a {
     color: red;
     cursor: pointer;
 }
+
+/* Mobile: stack filter above the grid */
+@media (max-width: 640px) { 
+    header h1 {
+        visibility: collapse;
+    }
+}

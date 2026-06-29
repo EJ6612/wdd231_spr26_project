@@ -10,22 +10,27 @@ body {
 }
 
 main {
-    max-width: 80rem;
-    margin: 0 auto;
-    padding: 2rem 2rem 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.main-div {
+    width: 80%;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    background-color: var(--color-surface);
+    border: var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 2rem;
 }
 
-/* Disables the hover and link stuff */
-.item-card:hover {
-    box-shadow: unset;
-    transform: unset;
-}
-
-.item-card__link {
-    color: unset;
-    text-decoration: unset;
+@media (max-width: 640px) { 
+    .main-div {
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+    }
 }

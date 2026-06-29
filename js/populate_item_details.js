@@ -5,7 +5,7 @@ const itemId = params.get("id");
 
 const item = data.find(entry => entry.ITEM_ID === itemId);
 
-const main = document.querySelector("main");
+const main = document.querySelector(".main-div");
 
 if (!item) {
     main.innerHTML = 
@@ -47,21 +47,22 @@ if (!item) {
                 loading="lazy"
             >
 
-            <div class="item-details__content">
+            <div class="item-card__body">
                 <div class="item-card__categories">
                     ${categoriesHTML}
                 </div>
 
-                <h2 class="item-details__title">${item.ITEM_NAME}</h2>
+                <h2 class="item-card__title">${item.ITEM_NAME}</h2>
+                
+                <p class="item-card__description">${item.DESCRIPTION}</p>
 
-                <p class="item-details__price">${item.CURRENCY} $${item.PRICE}</p>
+                <p class="item-card__price">${item.CURRENCY} $${item.PRICE}</p>
 
-                <p class="item-details__seller">
+                <p class="item-card__seller">
                     <span class="visually-hidden">Sold by</span>
                     ${item.SELLER_NAME} · ${item.DATE_LISTED}
                 </p>
 
-                <p class="item-details__description">${item.DESCRIPTION}</p>
 
                 <div class="item-card__actions">
                     ${contactsHTML}

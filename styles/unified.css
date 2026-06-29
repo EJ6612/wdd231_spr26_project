@@ -10,9 +10,13 @@
     /* Neutral palette */
     --color-ink:            #0d2626; /* near-black with a cyan tint */
     --color-ink-muted:      #4a7070; /* secondary text */
+    --color-ink-light:      #8fafaf; /* secondary secondary text */
     --color-border:         #d0e8e8; /* light borders */
     --color-surface:        #f4fbfb; /* page / card background */
     --color-white:          #ffffff;
+
+    --color-shadow-lite:    rgba(13, 38, 38, 0.15);
+    --color-shadow-strong:  rgba(13, 38, 38, 0.30);
 }
 
 

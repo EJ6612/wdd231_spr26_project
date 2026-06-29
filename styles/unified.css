@@ -3,7 +3,7 @@
     /* Brand palette */
     --color-primary:        #008b8b; /* darkcyan base */
     --color-primary-dark:   #006666; /* hover / pressed state */
-    --color-primary-deeper: #004c4c; /* footer background */
+    --color-primary-darker: #004c4c; /* footer background */
     --color-primary-light:  #00aaaa; /* highlights, badges */
     --color-primary-subtle: #e0f5f5; /* tinted backgrounds */
 

@@ -26,6 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Store</title>
     <link rel="stylesheet" href="../styles/homepage.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/user.css" />
     <script type="module" src="../js/populate_user_feed.js"></script>
 
@@ -39,9 +40,11 @@
          ============================================= -->
     <header>
 
-        <h1><a href="../">Student Store</a></h1>
+        <h1>
+            <a href="../index.html">Student Store</a>
+        </h1>
 
-        <form class="search-form" role="search" action="#" method="#">
+        <form class="search-form" role="search" action="#">
             <input
                 id="search-input"
                 type="search"
@@ -52,16 +55,16 @@
             <button type="submit" aria-label="Submit search">🔎</button>
         </form>
 
-        <!-- TODO Add NEW ITEM button here :) -->
-
         <!-- TODO Account (at some point, have a dropdown for this) -->
         <nav class="account-nav" aria-label="Account">
-            <a href="#" class="btn btn--account">😶</a>
+            <!-- <a href="signup.html">Account</a> -->
+            <a href="./user-profile" class="btn btn--account">😶</a>
         </nav>
-         <button class="bg-blue-600 text-white px-4 py-2 rounded-lg">
+         <!-- <button class="bg-blue-600 text-white px-4 py-2 rounded-lg">
       Account
-    </button>
+    </button> -->
     </header>
+
 <section class="profile-section">
 
   <!-- PROFILE CARD -->
@@ -247,16 +250,16 @@
     <footer>
 
         <!-- Site name / brand -->
-        <p class="footer__brand">Student Store</p>
+        <p class="footer-brand">Student Store</p>
 
         <!-- Copyright — JS can replace the year dynamically:
              document.querySelector('.footer__year').textContent = new Date().getFullYear(); -->
-        <p class="footer__copyright">
-            &copy; <span class="footer__year">2026</span> Student Store. All rights reserved.
+        <p class="footer-copyright">
+            &copy; <span class="footer-year">2026</span> Student Store. All rights reserved.
         </p>
 
         <!-- Support / legal links -->
-        <nav class="footer__links" aria-label="Support and legal links">
+        <nav class="footer-links" aria-label="Support and legal links">
             <ul role="list">
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact</a></li>

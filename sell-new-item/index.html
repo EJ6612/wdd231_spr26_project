@@ -198,25 +198,28 @@
 </main>
 
 <!-- ========================= FOOTER (IMPROVED) ========================= -->
-<footer class="bg-white border-t mt-12">
+<footer>
 
-    <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
+        <!-- Site name / brand -->
+        <p class="footer-brand">Student Store</p>
 
-        <p class="text-sm text-gray-500">
-            © 2026 Student Store. All rights reserved.
+        <!-- Copyright — JS can replace the year dynamically:
+             document.querySelector('.footer__year').textContent = new Date().getFullYear(); -->
+        <p class="footer-copyright">
+            &copy; <span class="footer-year">2026</span> Student Store. All rights reserved.
         </p>
 
-        <div class="flex gap-6 text-sm">
-            <a href="#" class="text-gray-600 hover:text-primary">About</a>
-            <a href="#" class="text-gray-600 hover:text-primary">Contact</a>
-            <a href="#" class="text-gray-600 hover:text-primary">Privacy</a>
-            <a href="#" class="text-gray-600 hover:text-primary">Terms</a>
-        </div>
+        <!-- Support / legal links -->
+        <nav class="footer-links" aria-label="Support and legal links">
+            <ul role="list">
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/terms">Terms of Use</a></li>
+            </ul>
+        </nav>
 
-    </div>
-
-</footer>
-<script src="js/sell.js"></script>
+    </footer>
 
 </body>
 

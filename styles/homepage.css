@@ -8,89 +8,61 @@
 
 body {
     margin: 0;
-    font-size: 1rem;
     line-height: 1.5;
 }
 
 main {
-    max-width: 80rem;
+    display: flex;
+    max-width: 75rem;
+    flex-direction: column;
     margin: 0 auto;
     padding: 2rem 2rem 4rem;
-
-    display: flex;
-    flex-direction: column;   /* Stack landing above feed */
     gap: 2.5rem;
 }
 
-/* --- Landing --- */
 .landing {
     width: 100%;
     text-align: center;
     padding: 3.5rem 1rem 3rem;
-    /* Remove the bottom margin from before —
-       the gap on <main> handles spacing now    */
 }
 
 .landing h2 {
-    font-size: clamp(1.75rem, 4vw, 2.75rem); /* Fluid type: scales between viewports */
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    color: #1a1a2e;
-    margin: 0 0 1rem;
+    color: var(--color-primary-darker);
+
 }
 
-.landing__description {
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    color: #555577;
+.landing p {
+    color: var(--color-ink);
     max-width: 36rem;
     margin: 0 auto 2rem;
 }
 
-/* ==============================================
-   FEED SECTION
-   Two-column layout: [Filter Panel] [Item Grid]
-   On smaller screens the filter stacks above
-   the grid.
-   ============================================== */
-
 .feed {
     display: grid;
-    grid-template-columns: 14rem 1fr;   /* Filter left, grid right */
+    grid-template-columns: 14rem 1fr;
     grid-template-rows: auto;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: start;
 }
 
-/* ==============================================
-   FILTER PANEL  (sidebar)
-   Sticks to the top as the user scrolls through
-   the item grid. The offset accounts for the
-   sticky header height (4rem) + breathing room.
-   ============================================== */
-
 .filter-panel {
     position: sticky;
-    top: 5rem; /* 4rem header + 1rem gap */
-
-    background-color: #ffffff;
-    border: 1px solid #e4e4f0;
+    top: 5rem;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
     border-radius: 12px;
     padding: 1.25rem;
-
     grid-column: 1;
 }
 
 .filter-panel__heading {
-    font-size: 1rem;
+    color: var(--color-primary-darker);
     font-weight: 700;
-    color: #1a1a2e;
     margin: 0 0 1.25rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid #e4e4f0;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--color-border);
 }
 
-/* Remove default fieldset chrome */
 .filter-panel__group {
     border: none;
     padding: 0;
@@ -102,48 +74,43 @@ main {
 }
 
 .filter-panel__group legend {
-    font-size: 0.8rem;
-    font-weight: 700;
+    font-size: 0.75rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: #888899;
-    margin-bottom: 0.625rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.05em;
 }
 
-/* Category list */
 .filter-panel__list {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.375rem;
+    gap: 0.25rem;
 }
 
 .filter-panel__list label {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-
     font-size: 0.9rem;
-    color: #333344;
+    color: var(--color-ink);
     cursor: pointer;
 
     transition: color 0.15s ease;
 }
 
 .filter-panel__list label:hover {
-    color: #004646;
+    color: var(--color-primary);
 }
 
 .filter-panel__list input[type="checkbox"] {
-    accent-color: darkcyan; /* Colours the checkmark to match the brand */
-    width: 1rem;
-    height: 1rem;
+    accent-color: var(--color-primary);
     cursor: pointer;
 }
 
-/* Price range inputs */
 .price-range {
     display: flex;
     align-items: center;
@@ -153,71 +120,56 @@ main {
 }
 
 .price-range input[type="number"] {
-    width: 0;             /* Let flex distribute space evenly */
+    width: 0;
     min-width: 0;
     flex: 1 1 0;
     height: 2rem;
-    padding: 0 0.625rem;
+    padding: 0 0.35rem;
 
-    font-size: 0.875rem;
-    color: var(--color-ink);
-    background-color: #f5f5f5;
+    font-size: 0.75rem;
+    color: var(--color-ink-muted);
+    background-color: var(--color-white);
 
     border: 1.5px solid var(--color-border);
     border-radius: 6px;
     outline: none;
     box-sizing: border-box;
 
-    /* Hide the browser's number spinner arrows */
     appearance: textfield;
-    -moz-appearance: textfield;
-
-    transition: border-color 0.2s ease;
-}
-
-.price-range input[type="number"]::-webkit-inner-spin-button,
-.price-range input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-}
-
-.price-range input[type="number"]:focus {
-    border-color: var(--color-primary);
-    background-color: var(--color-white);
 }
 
 .price-range span {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     color: var(--color-ink-muted);
-    flex-shrink: 0;     /* The "–" separator should never compress */
+    flex-shrink: 0;
 }
 
-/* Apply button */
 .btn--apply-filters {
     width: 100%;
     height: 2.25rem;
 
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: #ffffff;
-    background-color: darkcyan;
+    font-size: 0.8rem;
+    color: var(--color-white);
+    background-color: var(--color-primary);
 
     border: none;
     border-radius: 6px;
     cursor: pointer;
 
-    transition: background-color 0.2s ease;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
 }
 
 .btn--apply-filters:hover {
-    background-color: #004646;
+    background-color: var(--color-primary-dark);
+    color: var(--color-primary-subtle);
+    transform: translateY(-2px);
 }
 
-/* ==============================================
-   ITEM GRID
-   Auto-fill columns that are at least 16rem
-   wide — naturally responsive without media
-   queries.
-   ============================================== */
+.btn--apply-filters:active {
+    transform: translateY(1px);
+    background-color: var(--color-primary-darker);
+}
 
 .item-grid {
     list-style: none;
@@ -227,22 +179,10 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
     gap: 1.25rem;
-    align-items: start; /* Cards don't stretch to match their neighbours' height */
+    align-items: start;
     grid-column: 2;
 }
 
-/* ==============================================
-   RESPONSIVE
-   ============================================== */
-
-/* Tablet: narrow the sidebar slightly */
-@media (max-width: 900px) {
-    .feed {
-        grid-template-columns: 12rem 1fr;
-    }
-}
-
-/* Mobile: stack filter above the grid */
 @media (max-width: 640px) {
     main {
         padding: 1.25rem 1rem 3rem;
@@ -254,23 +194,20 @@ main {
     }
 
     .feed {
-        grid-template-columns: 1fr; /* Single column */
+        grid-template-columns: 1fr;
         gap: 1.25rem;
     }
 
-    /* Reset explicit column placement so both
-    children stack naturally in source order  */
-    .filter-panel,
-    .item-grid {
+    .filter-panel, .item-grid {
         grid-column: 1;
     }
 
-    /* Filter panel no longer needs to be sticky when stacked */
     .filter-panel {
-        position: static;
+        position: sticky;
+        z-index: 50;
+        box-shadow: 0 6px 24px var(--color-shadow-lite);
     }
 
-    /* Lay the category list out horizontally so it doesn't take up too much height */
     .filter-panel__list {
         flex-direction: row;
         flex-wrap: wrap;

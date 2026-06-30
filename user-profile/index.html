@@ -26,9 +26,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Store</title>
     <link rel="stylesheet" href="../styles/homepage.css" />
-    <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/user.css" />
     <script type="module" src="../js/populate_user_feed.js"></script>
+    <script type="module" src="./js/filter-collapse.js" defer></script>
 
 </head>
 <body>
@@ -150,76 +150,88 @@
                  TODO at some point, make collapsable
                  ----------------------------------------- -->
             <aside class="filter-panel" aria-label="Filter listings">
-                <h3 class="filter-panel__heading">Filter</h3>
+                <button
+                    type="button"
+                    class="filter-panel__toggle"
+                    aria-expanded="false"
+                    aria-controls="filter-panel-content"
+                >
+                    <span class="filter-panel__heading">Filter</span>
+                    <span id="filter-panel-icon" class="filter-panel__heading" aria-hidden="true">−</span>
+                </button>
 
                 <!-- Categories
                      Add / remove <li> items to match your
                      category taxonomy in the database.      -->
-                <fieldset class="filter-panel__group">
-                    <legend>Category</legend>
-                    <ul class="filter-panel__list" role="list">
-                        <li>
-                            <label>
-                                <input type="checkbox" name="category" value="textbooks">
-                                Textbooks
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="checkbox" name="category" value="electronics">
-                                Electronics
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="checkbox" name="category" value="furniture">
-                                Furniture
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="checkbox" name="category" value="clothing">
-                                Clothing
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="checkbox" name="category" value="other">
-                                Other
-                            </label>
-                        </li>
-                    </ul>
-                </fieldset>
+                <div id="filter-panel-content" class="filter-panel__content">
+                    <div class="filter-panel__inner">
+                        <fieldset class="filter-panel__group">
+                            <legend class="filter-panel_category">Category</legend>
+                            <ul class="filter-panel__list" role="list">
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="category" value="textbooks">
+                                        Textbooks
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="category" value="electronics">
+                                        Electronics
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="category" value="furniture">
+                                        Furniture
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="category" value="clothing">
+                                        Clothing
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="category" value="other">
+                                        Other
+                                    </label>
+                                </li>
+                            </ul>
+                        </fieldset>
 
-                <!-- Price Range
-                     JS should debounce the 'input' event
-                     and update the #price-display label.    -->
-                <fieldset class="filter-panel__group">
-                    <legend>Price Range</legend>
-                    <div class="price-range">
-                        <label for="price-min" class="visually-hidden">Minimum price</label>
-                        <input
-                            id="price-min"
-                            type="number"
-                            name="price_min"
-                            min="0"
-                            placeholder="Min $"
-                            aria-label="Minimum price"
-                        >
-                        <span aria-hidden="true">–</span>
-                        <label for="price-max" class="visually-hidden">Maximum price</label>
-                        <input
-                            id="price-max"
-                            type="number"
-                            name="price_max"
-                            min="0"
-                            placeholder="Max $"
-                            aria-label="Maximum price"
-                        >
+                        <!-- Price Range
+                            JS should debounce the 'input' event
+                            and update the #price-display label.    -->
+                        <fieldset class="filter-panel__group">
+                            <legend>Price Range</legend>
+                            <div class="price-range">
+                                <label for="price-min" class="visually-hidden">Minimum price</label>
+                                <input
+                                    id="price-min"
+                                    type="number"
+                                    name="price_min"
+                                    min="0"
+                                    placeholder="Min $"
+                                    aria-label="Minimum price"
+                                >
+                                <span aria-hidden="true">–</span>
+                                <label for="price-max" class="visually-hidden">Maximum price</label>
+                                <input
+                                    id="price-max"
+                                    type="number"
+                                    name="price_max"
+                                    min="0"
+                                    placeholder="Max $"
+                                    aria-label="Maximum price"
+                                >
+                            </div>
+                        </fieldset>
+
+                        <button type="button" class="btn--apply-filters">Apply Filters</button>
                     </div>
-                </fieldset>
-
-                <button type="button" class="btn btn--apply-filters">Apply Filters</button>
+                </div>
             </aside>
 
 

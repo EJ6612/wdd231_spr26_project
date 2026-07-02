@@ -1,190 +1,358 @@
 <!DOCTYPE html>
 <html lang="en" class="light">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CampusCart - Sell an Item</title>
 
-    <!-- Tailwind (utility framework) -->
+    <!-- SEO -->
+    <meta name="description" content="Sell textbooks, electronics, furniture and more on Student Store.">
+    <meta name="robots" content="index,follow">
+
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Store | Sell an Item</title>
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="../styles/homepage.css">
     <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+
+    <!-- Page Styles -->
+    <link rel="stylesheet" href="styles.css">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
 </head>
 
+<body class="min-h-screen flex flex-col">
 
-<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
-
-<!-- ========================= HEADER ========================= -->
+<!-- ======================================================
+HEADER
+====================================================== -->
 <header>
 
-    <!-- Logo / Brand -->
-    <h1>
-        <a href="../index.html">Student Store</a>
-    </h1>
+    <div class="header-top">
 
-    <!-- Search bar -->
-    <form class="search-form" role="search" action="#" method="get">
-        <input
-            id="search-input"
-            type="search"
-            name="q"
-            placeholder="Search listings..."
-            aria-label="Search listings">
+        <!-- Logo -->
+        <h1 class="site-logo">
+            <a href="../index.html">
+                Student Store
+            </a>
+        </h1>
 
-        <button type="submit" aria-label="Submit search">
-            🔎
-        </button>
-    </form>
 
-    <!-- Account / User actions -->
-    <div class="header-actions">
-        <button class="flex items-center gap-2 px-4 py-2 rounded-full text-primary font-bold">
-            <span class="material-symbols-outlined">account_circle</span>
-            <span>Account</span>
-        </button>
+        <!-- Search -->
+        <form class="search-form" role="search">
+
+            <input
+                id="search-input"
+                type="search"
+                placeholder="Search for textbooks, tech, furniture..."
+                aria-label="Search listings">
+
+
+            <button type="submit">
+                🔍
+            </button>
+
+        </form>
+
+
+
+        <!-- Account -->
+        <nav class="account-nav">
+
+            <a 
+            href="../user-profile/index.html"
+            class="btn--account">
+
+                <span class="material-symbols-outlined">
+                    account_circle
+                </span>
+
+                <span>
+                    Account
+                </span>
+
+            </a>
+
+        </nav>
+
+
     </div>
+
+
+
+    <!-- Navigation Row -->
+    <nav class="main-nav" aria-label="Main navigation">
+
+        <a href="../index.html">
+            Home
+        </a>
+
+
+        <a href="../browse/index.html">
+            Browse
+        </a>
+
+
+        <a href="../sell-new-item/index.html">
+            Sell
+        </a>
+
+
+        <a href="../user-profile/index.html">
+            Profile
+        </a>
+
+
+        <a href="../about/index.html">
+            About
+        </a>
+
+
+    </nav>
+
 
 </header>
 
-<!-- ========================= MAIN ========================= -->
+<!-- ======================================================
+MAIN
+====================================================== -->
+
 <main class="flex-grow max-w-7xl mx-auto w-full px-6 py-10">
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
-        <!-- ================= SIDEBAR ================= -->
+        <!-- Sidebar -->
         <aside class="lg:col-span-4 space-y-6 sticky top-24">
 
-            <div>
-                <h1 class="text-3xl font-bold">Sell an Item</h1>
-                <p class="text-on-surface-variant mt-2">
-                    Turn your campus clutter into cash. Reach thousands of students instantly.
+            <section>
+
+                <h2 class="text-3xl font-bold">
+                    Sell an Item
+                </h2>
+
+                <p class="mt-2 text-on-surface-variant">
+                    Turn your campus clutter into cash.
                 </p>
-            </div>
 
-            <div class="bg-surface-container-low rounded-xl p-5 space-y-4">
+            </section>
 
-                <div class="flex gap-3 items-start">
-                    <div class="text-primary">✔</div>
-                    <div>
-                        <p class="font-semibold text-primary">Step 1</p>
-                        <p class="text-sm">Item Details</p>
-                    </div>
-                </div>
+            <section class="bg-surface-container-low rounded-xl p-5">
 
-                <div class="flex gap-3 items-start opacity-60">
-                    <div>2</div>
-                    <div>
-                        <p class="text-sm">Pricing & Shipping</p>
-                    </div>
-                </div>
+                <p class="font-semibold text-primary">
+                    ✔ Step 1
+                </p>
 
-            </div>
+                <p>
+                    Item Details
+                </p>
 
-            <div class="bg-green-50 border border-green-200 rounded-xl p-4 flex gap-3">
-                <span class="material-symbols-outlined text-green-600">verified_user</span>
-                <div class="text-sm">
-                    <p class="font-semibold">Campus Safety First</p>
-                    <p>Meet in public places and use in-app chat only.</p>
-                </div>
-            </div>
+                <p class="mt-3 opacity-60">
+                    2. Pricing & Shipping
+                </p>
+
+            </section>
+
+            <section class="bg-green-50 border border-green-200 rounded-xl p-4">
+
+                <h3 class="font-semibold">
+                    Campus Safety First
+                </h3>
+
+                <p class="text-sm">
+                    Meet in public places and communicate through trusted channels.
+                </p>
+
+            </section>
 
         </aside>
 
-        <!-- ================= FORM ================= -->
+        <!-- Sell Form -->
         <section class="lg:col-span-8">
 
-            <form class="bg-white border rounded-2xl shadow-sm p-8 space-y-6">
+            <form
+                id="sell-form"
+                class="bg-white border rounded-2xl shadow-sm p-8 space-y-6">
 
                 <!-- Photos -->
-                <div>
-                    <label class="font-semibold">Photos</label>
 
-                    <div class="mt-2 border-2 border-dashed rounded-xl p-8 text-center hover:border-primary transition">
-                        <span class="material-symbols-outlined text-4xl text-primary">add_a_photo</span>
-                        <p class="mt-2 font-medium">Drag & drop or click to upload</p>
-                        <p class="text-sm text-gray-500">Up to 3 images</p>
-                        <input type="file" multiple accept="image/*" class="hidden">
+                <div>
+
+                    <label
+                        for="image-input"
+                        class="font-semibold">
+
+                        Photos
+
+                    </label>
+
+                    <input
+                        id="image-input"
+                        type="file"
+                        accept="image/*"
+                        multiple
+                        class="mt-3">
+
+                    <p class="text-sm text-gray-500">
+                        Upload up to 5 images.
+                    </p>
+
+                    <div
+                        id="image-preview"
+                        class="flex flex-wrap gap-3 mt-4">
                     </div>
+
                 </div>
 
                 <!-- Title -->
+
                 <div>
-                    <label class="font-semibold">Item Title</label>
-                    <input class="w-full mt-2 border rounded-lg p-3" placeholder="Organic Chemistry 8th Edition">
+
+                    <label
+                        for="title"
+                        class="font-semibold">
+
+                        Item Title
+
+                    </label>
+
+                    <input
+                        id="title"
+                        type="text"
+                        class="w-full mt-2 border rounded-lg p-3"
+                        placeholder="Organic Chemistry 8th Edition">
+
                 </div>
 
                 <!-- Category + Price -->
+
                 <div class="grid md:grid-cols-2 gap-4">
 
                     <div>
-                        <label class="font-semibold">Category</label>
-                        <select class="w-full mt-2 border rounded-lg p-3">
-                            <option>Select Category</option>
+
+                        <label
+                            for="category"
+                            class="font-semibold">
+
+                            Category
+
+                        </label>
+
+                        <select
+                            id="category"
+                            class="w-full mt-2 border rounded-lg p-3">
+
+                            <option value="">Select Category</option>
                             <option>Textbooks</option>
                             <option>Electronics</option>
                             <option>Furniture</option>
                             <option>Clothing</option>
+                            <option>Other</option>
+
                         </select>
+
                     </div>
 
                     <div>
-                        <label class="font-semibold">Price ($)</label>
-                        <input type="number" class="w-full mt-2 border rounded-lg p-3" placeholder="0.00">
+
+                        <label
+                            for="price"
+                            class="font-semibold">
+
+                            Price ($)
+
+                        </label>
+
+                        <input
+                            id="price"
+                            type="number"
+                            min="0"
+                            step="0.01"
+                            placeholder="0.00"
+                            class="w-full mt-2 border rounded-lg p-3">
+
                     </div>
 
                 </div>
 
                 <!-- Condition -->
-                <div>
-                    <label class="font-semibold">Condition</label>
+
+                <fieldset>
+
+                    <legend class="font-semibold">
+                        Condition
+                    </legend>
 
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-3">
 
-                        <label class="border rounded-lg p-3 text-center cursor-pointer hover:border-primary">
-                            <input type="radio" name="condition" checked>
-                            <div>New</div>
-                        </label>
+                        <label><input type="radio" name="condition" value="New" checked> New</label>
 
-                        <label class="border rounded-lg p-3 text-center cursor-pointer hover:border-primary">
-                            <input type="radio" name="condition">
-                            <div>Like New</div>
-                        </label>
+                        <label><input type="radio" name="condition" value="Like New"> Like New</label>
 
-                        <label class="border rounded-lg p-3 text-center cursor-pointer hover:border-primary">
-                            <input type="radio" name="condition">
-                            <div>Good</div>
-                        </label>
+                        <label><input type="radio" name="condition" value="Good"> Good</label>
 
-                        <label class="border rounded-lg p-3 text-center cursor-pointer hover:border-primary">
-                            <input type="radio" name="condition">
-                            <div>Fair</div>
-                        </label>
+                        <label><input type="radio" name="condition" value="Fair"> Fair</label>
 
                     </div>
-                </div>
+
+                </fieldset>
 
                 <!-- Description -->
+
                 <div>
-                    <label class="font-semibold">Description</label>
-                    <textarea rows="5" class="w-full mt-2 border rounded-lg p-3" placeholder="Describe your item..."></textarea>
+
+                    <label
+                        for="description"
+                        class="font-semibold">
+
+                        Description
+
+                    </label>
+
+                    <textarea
+                        id="description"
+                        rows="5"
+                        maxlength="500"
+                        placeholder="Describe your item..."
+                        class="w-full mt-2 border rounded-lg p-3"></textarea>
+
+                    <p id="char-count">
+                        0 / 500 characters
+                    </p>
+
                 </div>
 
-                <!-- Actions -->
-                <div class="flex flex-col md:flex-row justify-between gap-4 pt-4">
+                <!-- Buttons -->
 
-                    <button type="button" class="px-5 py-3 rounded-lg border hover:bg-gray-100">
+                <div class="flex justify-between flex-wrap gap-4">
+
+                    <button
+                        id="save-draft"
+                        type="button"
+                        class="px-5 py-3 rounded-lg border">
+
                         Save Draft
+
                     </button>
 
-                    <button type="submit" class="px-5 py-3 rounded-lg bg-primary text-white font-semibold flex items-center justify-center gap-2 hover:opacity-90">
+                    <button
+                        type="submit"
+                        class="px-5 py-3 rounded-lg bg-primary text-white">
+
                         Post Listing
-                        <span class="material-symbols-outlined">send</span>
+
                     </button>
 
                 </div>
@@ -197,27 +365,59 @@
 
 </main>
 
-<!-- ========================= FOOTER (IMPROVED) ========================= -->
-<footer class="bg-white border-t mt-12">
+<!-- ======================================================
+FOOTER
+====================================================== -->
 
-    <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
+<footer>
 
-        <p class="text-sm text-gray-500">
-            © 2026 Student Store. All rights reserved.
-        </p>
+    <p class="footer__brand">
+        Student Store
+    </p>
 
-        <div class="flex gap-6 text-sm">
-            <a href="#" class="text-gray-600 hover:text-primary">About</a>
-            <a href="#" class="text-gray-600 hover:text-primary">Contact</a>
-            <a href="#" class="text-gray-600 hover:text-primary">Privacy</a>
-            <a href="#" class="text-gray-600 hover:text-primary">Terms</a>
-        </div>
+    <p class="footer__copyright">
+        &copy;
+        <span class="footer__year">2026</span>
+        Student Store. All rights reserved.
+    </p>
 
-    </div>
+    <nav
+        class="footer__links"
+        aria-label="Support">
+
+        <ul role="list">
+
+            <li>
+                <a href="../about/index.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="../contact/index.html">
+                    Contact
+                </a>
+            </li>
+
+            <li>
+                <a href="../about/privacy-policy.html">
+                    Privacy Policy
+                </a>
+            </li>
+
+            <li>
+                <a href="../terms/index.html">
+                    Terms of Use
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
 
 </footer>
+
 <script src="js/sell.js"></script>
 
 </body>
-
 </html>

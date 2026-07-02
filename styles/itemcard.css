@@ -168,3 +168,68 @@
 .item-card__contact-btn:hover img {
     filter: brightness(0) invert(1);            /* → white */
 }
+/* ==============================================
+   SOLD STATUS
+============================================== */
+
+
+.item-card--sold {
+
+    opacity:.65;
+
+}
+
+
+.item-card--sold:hover {
+
+    transform:none;
+
+    box-shadow:none;
+
+}
+
+
+
+.item-card__sold-badge {
+
+    position:absolute;
+
+    top:.75rem;
+
+    right:.75rem;
+
+
+    background:#c62828;
+
+    color:white;
+
+
+    padding:.35rem .75rem;
+
+    border-radius:999px;
+
+
+    font-size:.7rem;
+
+    font-weight:800;
+
+    letter-spacing:.05em;
+
+}
+/* CONDITION */
+
+.item-card__condition {
+
+    font-size:.75rem;
+
+    color:#555;
+
+    background:#f3f4f6;
+
+    padding:.2rem .5rem;
+
+    border-radius:999px;
+
+    display:inline-block;
+
+}

@@ -8,15 +8,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<title>Student Store | Campus Marketplace</title>
+<title>Student Store | Browse</title>
 
 
-<meta 
+<meta
 name="description"
-content="Buy and sell textbooks, electronics, furniture and more with students.">
+content="Browse student marketplace listings including textbooks, electronics, furniture and more.">
 
 
-<link rel="stylesheet" href="./styles/homepage.css">
+
+<link rel="stylesheet" href="../styles/homepage.css">
+<link rel="stylesheet" href="../styles/browse.css">
+
 
 
 <link
@@ -24,14 +27,16 @@ href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;70
 rel="stylesheet">
 
 
+
 <link
 href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
 rel="stylesheet">
 
 
+
 <script
 type="module"
-src="./js/populate_home.js"
+src="../js/populate_browse.js"
 defer>
 </script>
 
@@ -39,8 +44,17 @@ defer>
 </head>
 
 
-<body>
 
+
+
+<body class="browse">
+
+
+
+
+
+
+<!-- ================= HEADER ================= -->
 
 
 <header>
@@ -52,7 +66,7 @@ defer>
 
 <h1 class="site-logo">
 
-<a href="./index.html">
+<a href="../index.html">
 
 Student Store
 
@@ -67,6 +81,7 @@ Student Store
 <form
 class="search-form"
 role="search">
+
 
 
 <input
@@ -91,9 +106,7 @@ type="submit"
 
 aria-label="Search">
 
-
 🔍
-
 
 </button>
 
@@ -106,14 +119,15 @@ aria-label="Search">
 
 
 
-<nav 
+<nav
 class="account-nav"
 aria-label="Account">
 
 
+
 <a
 
-href="./user-profile/index.html"
+href="../user-profile/index.html"
 
 class="btn--account">
 
@@ -131,7 +145,11 @@ Account
 </a>
 
 
+
 </nav>
+
+
+
 
 
 
@@ -142,47 +160,60 @@ Account
 
 
 
+
+
 <nav
+
 class="main-nav"
+
 aria-label="Main navigation">
 
 
-<a href="./index.html">
+
+<a href="../index.html">
 
 Home
 
 </a>
 
 
-<a href="./browse/index.html">
+
+<a href="./index.html">
 
 Browse
 
 </a>
 
 
-<a href="./sell-new-item/index.html">
+
+<a href="../sell-new-item/index.html">
 
 Sell
 
 </a>
 
 
-<a href="./user-profile/index.html">
+
+<a href="../user-profile/index.html">
 
 Profile
 
 </a>
 
 
-<a href="./about/index.html">
+
+<a href="../about/index.html">
 
 About
 
 </a>
 
 
+
 </nav>
+
+
+
 
 
 
@@ -195,27 +226,35 @@ About
 
 
 
+
+<!-- ================= MAIN ================= -->
+
+
+
 <main>
 
 
 
 
 
-<section class="landing">
+
+
+<section class="browse-hero">
 
 
 <h2>
 
-Your Campus Marketplace
+Browse Campus Items
 
 </h2>
 
 
 
-<p class="landing__description">
 
-Buy and sell textbooks, electronics, furniture, and more —
-all within our student community.
+
+<p>
+
+Find textbooks, electronics, furniture and more from students.
 
 </p>
 
@@ -230,11 +269,18 @@ all within our student community.
 
 
 
+
 <section class="feed">
 
 
 
+
+
+
+
 <aside class="filter-panel">
+
+
 
 
 
@@ -248,90 +294,134 @@ Categories
 
 
 
+
+
 <ul class="filter-panel__list">
+
 
 
 <li>
 
 <label>
 
-<input 
+<input
+
 type="checkbox"
+
 name="category"
+
 value="textbooks">
+
 
 Textbooks
 
 </label>
 
+
 </li>
+
+
+
 
 
 <li>
 
 <label>
 
-<input 
+<input
+
 type="checkbox"
+
 name="category"
+
 value="electronics">
+
 
 Electronics
 
 </label>
 
+
 </li>
+
+
+
 
 
 <li>
 
 <label>
 
-<input 
+<input
+
 type="checkbox"
+
 name="category"
+
 value="furniture">
+
 
 Furniture
 
 </label>
 
+
 </li>
+
+
+
 
 
 <li>
 
 <label>
 
-<input 
+<input
+
 type="checkbox"
+
 name="category"
+
 value="clothing">
+
 
 Clothing
 
 </label>
 
+
 </li>
+
+
+
 
 
 <li>
 
 <label>
 
-<input 
+<input
+
 type="checkbox"
+
 name="category"
+
 value="other">
+
 
 Other
 
 </label>
 
+
 </li>
 
 
+
+
+
 </ul>
+
 
 
 
@@ -350,14 +440,20 @@ Price
 
 
 
+
+
 <div class="price-range">
 
 
-<label class="visually-hidden" for="min-price">
+
+<label
+class="visually-hidden"
+for="min-price">
 
 Minimum price
 
 </label>
+
 
 
 <input
@@ -372,11 +468,15 @@ placeholder="Min $">
 
 
 
-<label class="visually-hidden" for="max-price">
+<label
+class="visually-hidden"
+for="max-price">
 
 Maximum price
 
 </label>
+
+
 
 
 <input
@@ -389,7 +489,10 @@ placeholder="Max $">
 
 
 
+
+
 </div>
+
 
 
 
@@ -399,13 +502,11 @@ placeholder="Max $">
 
 <button
 
-class="btn--apply-filters"
+type="button"
 
-type="button">
-
+class="btn--apply-filters">
 
 Apply Filters
-
 
 </button>
 
@@ -413,7 +514,10 @@ Apply Filters
 
 
 
+
 </aside>
+
+
 
 
 
@@ -442,15 +546,13 @@ class="item-grid"
 
 role="list">
 
+
+
 </ul>
 
 
 
 
-</section>
-
-
-
 
 
 </section>
@@ -462,18 +564,9 @@ role="list">
 
 
 
-<a
-
-href="./sell-new-item/index.html"
-
-class="floating-add-btn"
-
-aria-label="Sell item">
+</section>
 
 
-+
-
-</a>
 
 
 
@@ -489,7 +582,13 @@ aria-label="Sell item">
 
 
 
+<!-- ================= FOOTER ================= -->
+
+
+
 <footer>
+
+
 
 
 
@@ -503,18 +602,15 @@ Student Store
 
 
 
-<p class="footer__copyright">
 
+
+<p class="footer__copyright">
 
 ©
 
-<span class="footer__year">
-
-</span>
-
+<span class="footer__year"></span>
 
 Student Store. All rights reserved.
-
 
 </p>
 
@@ -524,35 +620,40 @@ Student Store. All rights reserved.
 
 
 
-<nav class="footer__links" aria-label="Footer">
+<nav
+
+class="footer__links"
+
+aria-label="Footer">
+
 
 
 <ul>
 
 
 <li>
-<a href="./about/index.html">
+<a href="../about/index.html">
 About
 </a>
 </li>
 
 
 <li>
-<a href="./contact/index.html">
+<a href="../contact/index.html">
 Contact
 </a>
 </li>
 
 
 <li>
-<a href="./privacy/index.html">
+<a href="../privacy/index.html">
 Privacy
 </a>
 </li>
 
 
 <li>
-<a href="./terms/index.html">
+<a href="../terms/index.html">
 Terms
 </a>
 </li>
@@ -561,11 +662,18 @@ Terms
 </ul>
 
 
+
 </nav>
 
 
 
+
+
+
 </footer>
+
+
+
 
 
 

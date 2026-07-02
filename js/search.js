@@ -1,16 +1,28 @@
 import { populate_item_card } from "./populate_item.js";
 
-// Set up search and filters for any list of items
+/**
+ * Sets up search and filtering for a collection of items.
+ *
+ * @param {Array} items - List of items to display.
+ * @param {string} emptyMessage - Message shown when no items match.
+ */
 export function setupSearch(items, emptyMessage = "No listings found.") {
-    // Page elements
+    // ============================================================
+    // DOM Elements
+    // ============================================================
     const searchForm = document.querySelector(".search-form");
     const searchInput = document.querySelector("#search-input");
     const itemGrid = document.querySelector("#item-grid");
+
     const applyFiltersBtn = document.querySelector(".btn--apply-filters");
     const minPriceInput = document.querySelector("#price-min");
     const maxPriceInput = document.querySelector("#price-max");
 
-    // Show items in the grid
+    /**
+     * Renders a collection of items.
+     *
+     * @param {Array} itemsToRender
+     */
     function renderItems(itemsToRender) {
         itemGrid.innerHTML = "";
 
@@ -19,77 +31,98 @@ export function setupSearch(items, emptyMessage = "No listings found.") {
             return;
         }
 
-        itemsToRender.forEach(item => {
+        itemsToRender.forEach((item) => {
             itemGrid.appendChild(populate_item_card(item));
         });
     }
 
-    // Get checked category values
+    /**
+     * Returns the currently selected categories.
+     *
+     * @returns {string[]}
+     */
     function getSelectedCategories() {
-        const checkedBoxes = document.querySelectorAll('input[name="category"]:checked');
-        return Array.from(checkedBoxes).map(box => box.value.toLowerCase());
+        const checkedBoxes = document.querySelectorAll(
+            'input[name="category"]:checked'
+        );
+
+        return Array.from(checkedBoxes).map((box) =>
+            box.value.toLowerCase()
+        );
     }
 
-    // Run search + filters
+    /**
+     * Applies search text, category filters, and price filters.
+     */
     function filterItems() {
-        const query = searchInput ? searchInput.value.trim().toLowerCase() : "";
+        const query = searchInput
+            ? searchInput.value.trim().toLowerCase()
+            : "";
+
         const selectedCategories = getSelectedCategories();
 
-        const minPrice = minPriceInput && minPriceInput.value
-            ? parseFloat(minPriceInput.value)
-            : 0;
+        const minPrice =
+            minPriceInput && minPriceInput.value
+                ? parseFloat(minPriceInput.value)
+                : 0;
 
-        const maxPrice = maxPriceInput && maxPriceInput.value
-            ? parseFloat(maxPriceInput.value)
-            : Infinity;
+        const maxPrice =
+            maxPriceInput && maxPriceInput.value
+                ? parseFloat(maxPriceInput.value)
+                : Infinity;
 
-        const filteredItems = items.filter(item => {
-            // Search match
+        const filteredItems = items.filter((item) => {
             const matchesSearch =
                 query === "" ||
                 item.ITEM_NAME.toLowerCase().includes(query) ||
                 item.DESCRIPTION.toLowerCase().includes(query) ||
-                (item.CATEGORIES || []).some(category =>
+                (item.CATEGORIES || []).some((category) =>
                     category.toLowerCase().includes(query)
                 );
 
-            // Category match
             const matchesCategory =
                 selectedCategories.length === 0 ||
-                (item.CATEGORIES || []).some(category =>
+                (item.CATEGORIES || []).some((category) =>
                     selectedCategories.includes(category.toLowerCase())
                 );
 
-            // Price match
             const price = Number(item.PRICE);
-            const matchesPrice = price >= minPrice && price <= maxPrice;
+            const matchesPrice =
+                price >= minPrice && price <= maxPrice;
 
-            return matchesSearch && matchesCategory && matchesPrice;
+            return (
+                matchesSearch &&
+                matchesCategory &&
+                matchesPrice
+            );
         });
 
-        // Sort by item name
-        filteredItems.sort((a, b) => a.ITEM_NAME.localeCompare(b.ITEM_NAME));
+        filteredItems.sort((a, b) =>
+            a.ITEM_NAME.localeCompare(b.ITEM_NAME)
+        );
 
         renderItems(filteredItems);
     }
 
-    // Show initial items
+    // ============================================================
+    // Initial Render
+    // ============================================================
     renderItems(items);
 
-    // Search on submit
+    // ============================================================
+    // Event Listeners
+    // ============================================================
     if (searchForm) {
-        searchForm.addEventListener("submit", event => {
+        searchForm.addEventListener("submit", (event) => {
             event.preventDefault();
             filterItems();
         });
     }
 
-    // Apply filters button
     if (applyFiltersBtn) {
         applyFiltersBtn.addEventListener("click", filterItems);
     }
 
-    // Optional live search
     if (searchInput) {
         searchInput.addEventListener("input", filterItems);
     }

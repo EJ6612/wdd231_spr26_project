@@ -1,574 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>Student Store | Campus Marketplace</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Buy and sell textbooks, electronics, furniture and more with students."
+    >
 
+    <link rel="stylesheet" href="./styles/homepage.css">
 
-<title>Student Store | Campus Marketplace</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+        rel="stylesheet"
+    >
 
-<meta 
-name="description"
-content="Buy and sell textbooks, electronics, furniture and more with students.">
-
-
-<link rel="stylesheet" href="./styles/homepage.css">
-
-
-<link
-href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
-rel="stylesheet">
-
-
-<link
-href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-rel="stylesheet">
-
-
-<script
-type="module"
-src="./js/populate_home.js"
-defer>
-</script>
-
-
+    <script
+        type="module"
+        src="./js/populate_home.js"
+        defer
+    ></script>
 </head>
-
 
 <body>
 
-
-
-<header>
-
-
-<div class="header-top">
-
-
-
-<h1 class="site-logo">
-
-<a href="./index.html">
-
-Student Store
-
-</a>
-
-</h1>
-
-
-
-
-
-<form
-class="search-form"
-role="search">
-
-
-<input
-
-id="search-input"
-
-type="search"
-
-autocomplete="off"
-
-placeholder="Search for textbooks, tech, furniture..."
-
-aria-label="Search listings">
-
-
-
-
-
-<button
-
-type="submit"
-
-aria-label="Search">
-
-
-🔍
-
-
-</button>
-
-
-
-</form>
-
-
-
-
-
-
-<nav 
-class="account-nav"
-aria-label="Account">
-
-
-<a
-
-href="./user-profile/index.html"
-
-class="btn--account">
-
-
-<span class="material-symbols-outlined">
-
-account_circle
-
-</span>
-
-
-Account
-
-
-</a>
-
-
-</nav>
-
-
-
-</div>
-
-
-
-
-
-
-<nav
-class="main-nav"
-aria-label="Main navigation">
-
-
-<a href="./index.html">
-
-Home
-
-</a>
-
-
-<a href="./browse/index.html">
-
-Browse
-
-</a>
-
-
-<a href="./sell-new-item/index.html">
-
-Sell
-
-</a>
-
-
-<a href="./user-profile/index.html">
-
-Profile
-
-</a>
-
-
-<a href="./about/index.html">
-
-About
-
-</a>
-
-
-</nav>
-
-
-
-</header>
-
-
-
-
-
-
-
-
-<main>
-
-
-
-
-
-<section class="landing">
-
-
-<h2>
-
-Your Campus Marketplace
-
-</h2>
-
-
-
-<p class="landing__description">
-
-Buy and sell textbooks, electronics, furniture, and more —
-all within our student community.
-
-</p>
-
-
-
-</section>
-
-
-
-
-
-
-
-
-<section class="feed">
-
-
-
-<aside class="filter-panel">
-
-
-
-<h3 class="filter-panel__heading">
-
-Categories
-
-</h3>
-
-
-
-
-
-<ul class="filter-panel__list">
-
-
-<li>
-
-<label>
-
-<input 
-type="checkbox"
-name="category"
-value="textbooks">
-
-Textbooks
-
-</label>
-
-</li>
-
-
-<li>
-
-<label>
-
-<input 
-type="checkbox"
-name="category"
-value="electronics">
-
-Electronics
-
-</label>
-
-</li>
-
-
-<li>
-
-<label>
-
-<input 
-type="checkbox"
-name="category"
-value="furniture">
-
-Furniture
-
-</label>
-
-</li>
-
-
-<li>
-
-<label>
-
-<input 
-type="checkbox"
-name="category"
-value="clothing">
-
-Clothing
-
-</label>
-
-</li>
-
-
-<li>
-
-<label>
-
-<input 
-type="checkbox"
-name="category"
-value="other">
-
-Other
-
-</label>
-
-</li>
-
-
-</ul>
-
-
-
-
-
-
-
-
-<h3 class="filter-panel__heading">
-
-Price
-
-</h3>
-
-
-
-
-
-<div class="price-range">
-
-
-<label class="visually-hidden" for="min-price">
-
-Minimum price
-
-</label>
-
-
-<input
-
-id="min-price"
-
-type="number"
-
-placeholder="Min $">
-
-
-
-
-
-<label class="visually-hidden" for="max-price">
-
-Maximum price
-
-</label>
-
-
-<input
-
-id="max-price"
-
-type="number"
-
-placeholder="Max $">
-
-
-
-</div>
-
-
-
-
-
-
-
-<button
-
-class="btn--apply-filters"
-
-type="button">
-
-
-Apply Filters
-
-
-</button>
-
-
-
-
-
-</aside>
-
-
-
-
-
-
-
-<section>
-
-
-<h2 class="visually-hidden">
-
-Listings
-
-</h2>
-
-
-
-
-
-<ul
-
-id="item-grid"
-
-class="item-grid"
-
-role="list">
-
-</ul>
-
-
-
-
-</section>
-
-
-
-
-
-</section>
-
-
-
-
-
-
-
-
-<a
-
-href="./sell-new-item/index.html"
-
-class="floating-add-btn"
-
-aria-label="Sell item">
-
-
-+
-
-</a>
-
-
-
-
-
-</main>
-
-
-
-
-
-
-
-
-
-<footer>
-
-
-
-<p class="footer__brand">
-
-Student Store
-
-</p>
-
-
-
-
-
-<p class="footer__copyright">
-
-
-©
-
-<span class="footer__year">
-
-</span>
-
-
-Student Store. All rights reserved.
-
-
-</p>
-
-
-
-
-
-
-
-<nav class="footer__links" aria-label="Footer">
-
-
-<ul>
-
-
-<li>
-<a href="./about/index.html">
-About
-</a>
-</li>
-
-
-<li>
-<a href="./contact/index.html">
-Contact
-</a>
-</li>
-
-
-<li>
-<a href="./privacy/index.html">
-Privacy
-</a>
-</li>
-
-
-<li>
-<a href="./terms/index.html">
-Terms
-</a>
-</li>
-
-
-</ul>
-
-
-</nav>
-
-
-
-</footer>
-
-
+    <header>
+
+        <div class="header-top">
+
+            <h1 class="site-logo">
+                <a href="./index.html">
+                    Student Store
+                </a>
+            </h1>
+
+            <form
+                class="search-form"
+                role="search"
+            >
+                <input
+                    id="search-input"
+                    type="search"
+                    autocomplete="off"
+                    placeholder="Search for textbooks, tech, furniture..."
+                    aria-label="Search listings"
+                >
+
+                <button
+                    type="submit"
+                    aria-label="Search"
+                >
+                    🔍
+                </button>
+            </form>
+
+            <nav
+                class="account-nav"
+                aria-label="Account"
+            >
+                <a
+                    href="./user-profile/index.html"
+                    class="btn--account"
+                >
+                    <span class="material-symbols-outlined">
+                        account_circle
+                    </span>
+
+                    Account
+                </a>
+            </nav>
+
+        </div>
+
+        <nav
+            class="main-nav"
+            aria-label="Main navigation"
+        >
+            <a href="./index.html">Home</a>
+            <a href="./browse/index.html">Browse</a>
+            <a href="./sell-new-item/index.html">Sell</a>
+            <a href="./user-profile/index.html">Profile</a>
+            <a href="./about/index.html">About</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="landing">
+
+            <h2>Your Campus Marketplace</h2>
+
+            <p class="landing__description">
+                Buy and sell textbooks, electronics, furniture, and more —
+                all within our student community.
+            </p>
+
+        </section>
+
+        <section class="feed">
+
+            <aside class="filter-panel">
+
+                <h3 class="filter-panel__heading">
+                    Categories
+                </h3>
+
+                <ul class="filter-panel__list">
+
+                    <li>
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="category"
+                                value="textbooks"
+                            >
+                            Textbooks
+                        </label>
+                    </li>
+
+                    <li>
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="category"
+                                value="electronics"
+                            >
+                            Electronics
+                        </label>
+                    </li>
+
+                    <li>
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="category"
+                                value="furniture"
+                            >
+                            Furniture
+                        </label>
+                    </li>
+
+                    <li>
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="category"
+                                value="clothing"
+                            >
+                            Clothing
+                        </label>
+                    </li>
+
+                    <li>
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="category"
+                                value="other"
+                            >
+                            Other
+                        </label>
+                    </li>
+
+                </ul>
+
+                <h3 class="filter-panel__heading">
+                    Price
+                </h3>
+
+                <div class="price-range">
+
+                    <label
+                        class="visually-hidden"
+                        for="min-price"
+                    >
+                        Minimum price
+                    </label>
+
+                    <input
+                        id="min-price"
+                        type="number"
+                        placeholder="Min $"
+                    >
+
+                    <label
+                        class="visually-hidden"
+                        for="max-price"
+                    >
+                        Maximum price
+                    </label>
+
+                    <input
+                        id="max-price"
+                        type="number"
+                        placeholder="Max $"
+                    >
+
+                </div>
+
+                <button
+                    class="btn--apply-filters"
+                    type="button"
+                >
+                    Apply Filters
+                </button>
+
+            </aside>
+
+            <section>
+
+                <h2 class="visually-hidden">
+                    Listings
+                </h2>
+
+                <ul
+                    id="item-grid"
+                    class="item-grid"
+                    role="list"
+                ></ul>
+
+            </section>
+
+        </section>
+
+        <a
+            href="./sell-new-item/index.html"
+            class="floating-add-btn"
+            aria-label="Sell item"
+        >
+            +
+        </a>
+
+    </main>
+
+    <footer>
+
+        <p class="footer__brand">
+            Student Store
+        </p>
+
+        <p class="footer__copyright">
+            ©
+            <span class="footer__year"></span>
+            Student Store. All rights reserved.
+        </p>
+
+        <nav
+            class="footer__links"
+            aria-label="Footer"
+        >
+            <ul>
+                <li><a href="./about/index.html">About</a></li>
+                <li><a href="./contact/index.html">Contact</a></li>
+                <li><a href="./privacy/index.html">Privacy</a></li>
+                <li><a href="./terms/index.html">Terms</a></li>
+            </ul>
+        </nav>
+
+    </footer>
 
 </body>
-
 </html>

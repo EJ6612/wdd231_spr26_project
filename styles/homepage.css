@@ -6,355 +6,222 @@
 @import './sell-new-item-modal.css';
 
 
-
 /* =========================
    GLOBAL
 ========================= */
 
 body {
-    margin:0;
-    background:#f7f9fb;
-    color:#1a1a2e;
-    font-size:1rem;
-    line-height:1.5;
+    margin: 0;
+    background: #f7f9fb;
+    color: #1a1a2e;
+    font-size: 1rem;
+    line-height: 1.5;
 }
-
 
 main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 
-    max-width:1200px;
-
-    margin:auto;
-
-    padding:2rem;
-
-    display:flex;
-    flex-direction:column;
-
-    gap:2rem;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
 }
-
 
 
 /* =========================
    HERO
 ========================= */
 
-
 .landing {
-
-    text-align:center;
-
-    padding:3rem 1rem;
-
+    padding: 3rem 1rem;
+    text-align: center;
 }
-
 
 .landing h2 {
+    margin-bottom: 1rem;
 
-    font-size:clamp(2rem,5vw,3rem);
-
-    font-weight:800;
-
-    margin-bottom:1rem;
-
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
 }
-
 
 .landing__description {
+    max-width: 650px;
+    margin: auto;
 
-    max-width:650px;
-
-    margin:auto;
-
-    color:#666;
-
-    font-size:1.1rem;
-
+    color: #666;
+    font-size: 1.1rem;
 }
-
-
 
 
 /* =========================
    FEED LAYOUT
 ========================= */
 
-
 .feed {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2rem;
 
-    display:grid;
-
-    grid-template-columns:220px 1fr;
-
-    gap:2rem;
-
-    align-items:start;
-
+    align-items: start;
 }
-
-
 
 
 /* =========================
    FILTER PANEL
 ========================= */
 
-
 .filter-panel {
+    position: sticky;
+    top: 100px;
 
-    background:white;
+    padding: 1.5rem;
 
-    border-radius:16px;
-
-    padding:1.5rem;
-
-    border:1px solid #e5e7eb;
-
-    position:sticky;
-
-    top:100px;
-
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
 }
-
-
 
 .filter-panel__heading {
+    margin-bottom: 1.5rem;
 
-    font-size:1.2rem;
-
-    font-weight:800;
-
-    margin-bottom:1.5rem;
-
+    font-size: 1.2rem;
+    font-weight: 800;
 }
 
 
-
-/* categories */
+/* Categories */
 
 .filter-panel__list {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
 
-    list-style:none;
+    margin: 0;
+    padding: 0;
 
-    padding:0;
-
-    margin:0;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:.8rem;
-
+    list-style: none;
 }
-
-
 
 .filter-panel__list label {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
 
-    display:flex;
+    cursor: pointer;
 
-    align-items:center;
-
-    gap:.6rem;
-
-    cursor:pointer;
-
-    font-weight:600;
-
-    color:#444;
-
+    color: #444;
+    font-weight: 600;
 }
-
-
 
 .filter-panel__list input {
+    width: 18px;
+    height: 18px;
 
-    accent-color:cadetblue;
-
-    width:18px;
-
-    height:18px;
-
+    accent-color: cadetblue;
 }
 
 
-
-
-
-/* price */
+/* Price */
 
 .price-range {
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:.7rem;
-
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
 }
-
-
 
 .price-range input {
+    height: 38px;
+    padding: 0 .8rem;
 
-    height:38px;
-
-    padding:0 .8rem;
-
-    border-radius:8px;
-
-    border:1px solid #ddd;
-
+    border: 1px solid #ddd;
+    border-radius: 8px;
 }
-
-
-
 
 .btn--apply-filters {
+    width: 100%;
+    height: 40px;
+    margin-top: 1rem;
 
-    margin-top:1rem;
+    border: none;
+    border-radius: 8px;
 
-    width:100%;
+    background: cadetblue;
+    color: white;
 
-    height:40px;
-
-    border:none;
-
-    border-radius:8px;
-
-    background:cadetblue;
-
-    color:white;
-
-    font-weight:700;
-
-    cursor:pointer;
-
+    font-weight: 700;
+    cursor: pointer;
 }
-
 
 .btn--apply-filters:hover {
-
-    background:#287b7b;
-
+    background: #287b7b;
 }
-
-
-
 
 
 /* =========================
    ITEM GRID
 ========================= */
 
-
 .item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
 
-    list-style:none;
+    margin: 0;
+    padding: 0;
 
-    padding:0;
-
-    margin:0;
-
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(auto-fill,minmax(220px,1fr));
-
-
-    gap:1.5rem;
-
+    list-style: none;
 }
-
-
-
 
 
 /* =========================
    FLOATING SELL BUTTON
 ========================= */
 
-
 .floating-add-btn {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
 
-    position:fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    right:30px;
+    width: 60px;
+    height: 60px;
 
-    bottom:30px;
+    background: cadetblue;
+    color: white;
 
+    border-radius: 50%;
 
-    width:60px;
+    font-size: 2rem;
+    text-decoration: none;
 
-    height:60px;
-
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-
-    background:cadetblue;
-
-    color:white;
-
-    border-radius:50%;
-
-
-    font-size:2rem;
-
-    text-decoration:none;
-
-
-    box-shadow:0 10px 25px #0003;
-
+    box-shadow: 0 10px 25px #0003;
 }
-
-
 
 
 /* =========================
    MOBILE
 ========================= */
 
-
-@media(max-width:800px){
-
+@media (max-width: 800px) {
 
     main {
-
-        padding:1rem;
-
+        padding: 1rem;
     }
-
 
     .feed {
-
-        grid-template-columns:1fr;
-
+        grid-template-columns: 1fr;
     }
-
 
     .filter-panel {
-
-        position:static;
-
+        position: static;
     }
-
-
 
     .filter-panel__list {
-
-        flex-direction:column;
-
+        flex-direction: column;
     }
-
-
 
 }

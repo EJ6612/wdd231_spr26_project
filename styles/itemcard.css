@@ -12,6 +12,7 @@
     box-shadow: 0 6px 24px var(--color-shadow-lite);
 }
 
+/* Turns the card into a link */
 .item-card__link {
     display: flex;
     flex-direction: column;
@@ -82,6 +83,7 @@
     border-top: 1px solid var(--color-primary-light);
 }
 
+/* Contact button(s) */
 .item-card__contact-btn {
     display: inline-flex;
     align-items: center;
@@ -110,6 +112,7 @@
     transform: translateY(1px);
 }
 
+/* Change the color of the btn when hovered over */
 .item-card__contact-btn img {
     display: block;
     pointer-events: none;
@@ -123,5 +126,5 @@
 .item-card__contact-btn:hover img {
     filter: brightness(0) saturate(100%)
             invert(29%) sepia(49%) saturate(600%) 
-            hue-rotate(148deg);                 /* → darkcyan tint */
+            hue-rotate(148deg); 
 }

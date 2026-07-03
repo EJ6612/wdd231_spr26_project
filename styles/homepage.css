@@ -72,20 +72,4 @@ main {
         grid-template-columns: 1fr;
         gap: 1.25rem;
     }
-
-    .filter-panel, .item-grid {
-        grid-column: 1;
-    }
-
-    .filter-panel {
-        position: sticky;
-        z-index: 50;
-        box-shadow: 0 6px 24px var(--color-shadow-lite);
-    }
-
-    .filter-panel__list {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
 }

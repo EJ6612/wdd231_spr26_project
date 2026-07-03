@@ -18,6 +18,7 @@ header {
     box-shadow: 0 2px 8px #00000030;
 }
 
+/* Site name */
 header h1 {
     font-size: 1.25rem;
     font-weight: 700;
@@ -37,6 +38,7 @@ header h1 a:hover {
     opacity: 0.5;
     transition: opacity 0.2s ease;
 }
+/* ------ */
 
 /* Search bar */
 header .search-form {
@@ -87,6 +89,7 @@ header .search-form button {
 header .search-form button:hover { 
     background-color: var(--color-primary-dark);
 }
+/* ------ */
 
 /* Account */
 header .account-nav {
@@ -111,6 +114,7 @@ header .btn--account:hover {
     background-color: var(--color-primary-darker);
 }
 
+/* Hide the title on mobile */
 @media (max-width: 640px) {
     header {
         padding: 0 1rem;

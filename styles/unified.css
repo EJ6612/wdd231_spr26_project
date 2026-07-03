@@ -15,7 +15,7 @@
     --color-surface:        #f4fbfb; /* page / card background */
     --color-white:          #ffffff;
 
-    --color-shadow-lite:    rgba(13, 38, 38, 0.15);
+    --color-shadow-lite:    rgba(13, 38, 38, 0.185);
     --color-shadow-strong:  rgba(13, 38, 38, 0.30);
 }
 

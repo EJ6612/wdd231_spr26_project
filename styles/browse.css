@@ -1,0 +1,352 @@
+/* ==============================================
+   BROWSE PAGE
+============================================== */
+
+
+/*
+   Browse reuses:
+   - header.css
+   - footer.css
+   - unified.css
+   - homepage layout
+*/
+
+
+
+
+
+
+/* ==============================================
+   BROWSE HERO
+============================================== */
+
+
+.browse-hero {
+
+    text-align:center;
+
+    padding:
+        var(--space-xl)
+        var(--space-md);
+
+}
+
+
+
+.browse-hero h2 {
+
+    font-size:
+        clamp(2rem,5vw,3rem);
+
+
+    font-weight:800;
+
+
+    margin-bottom:
+        var(--space-md);
+
+}
+
+
+
+.browse-hero p {
+
+    max-width:650px;
+
+    margin:auto;
+
+    color:
+        var(--color-ink-muted);
+
+    font-size:1.1rem;
+
+}
+
+
+
+
+
+
+
+
+/* ==============================================
+   BROWSE FILTER PANEL
+============================================== */
+
+
+.browse .filter-panel {
+
+
+    background:
+        var(--color-white);
+
+
+    border-radius:
+        var(--radius-lg);
+
+
+    border:
+        1px solid var(--color-border);
+
+
+    padding:
+        var(--space-lg);
+
+
+    box-shadow:
+        var(--shadow-sm);
+
+}
+
+
+
+
+
+
+.browse .filter-panel__heading {
+
+
+    color:
+        var(--color-ink);
+
+
+    font-size:1.15rem;
+
+
+    font-weight:800;
+
+
+    margin-bottom:
+        var(--space-md);
+
+}
+
+
+
+
+
+
+
+
+/* ==============================================
+   CHECKBOXES
+============================================== */
+
+
+.browse .filter-panel__list label {
+
+
+    transition:
+        var(--transition-fast);
+
+}
+
+
+
+.browse .filter-panel__list label:hover {
+
+
+    color:
+        var(--color-primary);
+
+}
+
+
+
+
+
+
+.browse .filter-panel input[type="checkbox"] {
+
+
+    width:18px;
+
+    height:18px;
+
+
+    accent-color:
+        var(--color-primary);
+
+}
+
+
+
+
+
+
+
+
+
+/* ==============================================
+   PRICE INPUTS
+============================================== */
+
+
+.browse .price-range {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+        1fr 1fr;
+
+
+    gap:
+        var(--space-sm);
+
+}
+
+
+
+
+
+
+.browse .price-range input {
+
+
+    width:100%;
+
+
+    height:40px;
+
+
+    border-radius:
+        var(--radius-sm);
+
+
+    border:
+        1px solid var(--color-border);
+
+
+    padding:
+        0 var(--space-sm);
+
+}
+
+
+
+
+
+
+.browse .price-range input:focus {
+
+
+    border-color:
+        var(--color-primary);
+
+}
+
+
+
+
+
+
+
+
+
+/* ==============================================
+   APPLY BUTTON
+============================================== */
+
+
+.browse .btn--apply-filters {
+
+
+    margin-top:
+        var(--space-md);
+
+
+    background:
+        var(--color-primary);
+
+
+    transition:
+        var(--transition-fast);
+
+}
+
+
+
+
+.browse .btn--apply-filters:hover {
+
+
+    background:
+        var(--color-primary-dark);
+
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+
+
+
+
+
+
+
+/* ==============================================
+   EMPTY STATE
+============================================== */
+
+
+.no-results,
+.empty-state {
+
+
+    grid-column:
+        1 / -1;
+
+
+    text-align:center;
+
+
+    padding:
+        var(--space-xl);
+
+
+    color:
+        var(--color-ink-muted);
+
+
+    background:
+        var(--color-white);
+
+
+    border-radius:
+        var(--radius-lg);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+/* ==============================================
+   MOBILE
+============================================== */
+
+
+@media(max-width:800px){
+
+
+    .browse .price-range {
+
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+}

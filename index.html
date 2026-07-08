@@ -2,82 +2,105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- =============================================
-         SEO Meta Tags
-         ============================================= -->
-    <meta name="description" content="Buy and sell items with fellow students. Find textbooks, electronics, furniture, and more.">
-    <meta name="robots" content="index, follow">
-
-    <!-- =============================================
-         Open Graph Meta Tags
-         Used by Facebook, LinkedIn, Discord, Slack,
-         and most other social platforms when this
-         page is shared as a link.
-         ============================================= -->
-    <meta property="og:type"        content="website">
-    <meta property="og:url"         content="#">
-    <meta property="og:title"       content="Student Store">
-    <meta property="og:description" content="Buy and sell items with fellow students.">
-    <meta property="og:image"       content="#"><!-- Recommended: 1200×630px -->
-    <meta property="og:site_name"   content="Student Store">
-    <meta property="og:locale"      content="en_CA">
+    <title>Student Store | Campus Marketplace</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Store</title>
+    <meta name="description"
+          content="Buy and sell textbooks, electronics, furniture and more with students.">
     <link rel="stylesheet" href="./styles/homepage.css" />
     <link rel="stylesheet" href="./styles/filter.css" />
     <script type="module" src="./js/populate_home.js" defer></script>
     <script type="module" src="./js/new-item-modal.js" defer></script>
     <script type="module" src="./js/filter-collapse.js" defer></script>
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+
+    <!-- <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+        rel="stylesheet"
+    > -->
+
 </head>
+
 <body>
 
-    <!-- =============================================
-         HEADER
-         Contains the site identity, search, and
-         account controls.
-         ============================================= -->
     <header>
 
-        <h1>Student Store</h1>
+        <div class="header-top">
 
-        <form class="search-form" role="search" action="#">
-            <input
-                id="search-input"
-                type="search"
-                name="q"
-                placeholder="Search listings..."
-                aria-label="Search listings"
+            <h1 class="site-logo">
+                <a href="./index.html">
+                    Student Store
+                </a>
+            </h1>
+
+            <form
+                class="search-form"
+                role="search"
+            >
+                <input
+                    id="search-input"
+                    type="search"
+                    autocomplete="off"
+                    placeholder="Search for textbooks, tech, furniture..."
+                    aria-label="Search listings"
                 >
-            <button type="submit" aria-label="Submit search">🔎</button>
-        </form>
 
-        <!-- TODO Account (at some point, have a dropdown for this) -->
-        <nav class="account-nav" aria-label="Account">
-            <!-- <a href="signup.html">Account</a> -->
-            <a href="./user-profile" class="btn btn--account">😶</a>
+                <button
+                    type="submit"
+                    aria-label="Search"
+                >
+                    🔍
+                </button>
+            </form>
+
+            <nav
+                class="account-nav"
+                aria-label="Account"
+            >
+                <a
+                    href="./user-profile/index.html"
+                    class="btn--account"
+                >
+                    <span class="material-symbols-outlined">
+                        account_circle
+                    </span>
+
+                    Account
+                </a>
+            </nav>
+
+        </div>
+
+        <nav
+            class="main-nav"
+            aria-label="Main navigation"
+        >
+            <a href="./index.html">Home</a>
+            <a href="./browse/index.html">Browse</a>
+            <a href="./sell-new-item/index.html">Sell</a>
+            <a href="./user-profile/index.html">Profile</a>
+            <a href="./about/index.html">About</a>
         </nav>
-         <!-- <button class="bg-blue-600 text-white px-4 py-2 rounded-lg">
-      Account
-    </button> -->
+
     </header>
 
     <main>
-        <!-- =============================================
-            LANDING / HERO SECTION
-            Introductory copy shown above the item feed.
-            ============================================= -->
-        <section class="landing" aria-labelledby="landing-title">
 
-            <!-- Title -->
-            <h2 id="landing-title">Your Campus Marketplace</h2>
+        <section class="landing">
 
-            <!-- Description -->
+            <h2>Your Campus Marketplace</h2>
+
             <p class="landing__description">
                 Buy and sell textbooks, electronics, furniture, and more —
-                all within our international student community.
+                all within our student community.
             </p>
 
         </section>
@@ -188,28 +211,28 @@
                 </div>
             </aside>
 
+            <section>
 
-            <!-- -----------------------------------------
-                 ITEM GRID
-                 JS (populate_feed.js) empties this container and
-                 injects rendered item cards on page load
-                 and whenever filters change.
+                <h2 class="visually-hidden">
+                    Listings
+                </h2>
 
-                 The card below is a single static EXAMPLE
-                 showing the expected card structure. The
-                 JS renderer should produce identical markup
-                 for each item it injects.
-                 ----------------------------------------- -->
-            <ul id="item-grid" class="item-grid" role="list" aria-label="Listings">
+                <ul
+                    id="item-grid"
+                    class="item-grid"
+                    role="list"
+                ></ul>
 
-            </ul>
-            <!-- End #item-grid -->
+            </section>
 
         </section>
-        <!-- End .feed -->
 
-        <a href="#" class="floating-add-btn" aria-label="Add new item">
-            ＋
+        <a
+            href="./sell-new-item/index.html"
+            class="floating-add-btn"
+            aria-label="Sell item"
+        >
+            +
         </a>
 
         <div
@@ -303,31 +326,34 @@
 
     </main>
 
-    <!-- =============================================
-         FOOTER
-         ============================================= -->
     <footer>
 
         <!-- Site name / brand -->
+        <!-- combine with class="footer__brand" -->
         <p class="footer-brand">Student Store</p>
 
         <!-- Copyright — JS can replace the year dynamically:
              document.querySelector('.footer__year').textContent = new Date().getFullYear(); -->
-        <p class="footer-copyright">
-            &copy; <span class="footer-year">2026</span> Student Store. All rights reserved.
+      
+        <!-- combine with class="footer-copyright" -->
+        <p class="footer__copyright">
+            ©
+            <span class="footer__year"></span>
+            Student Store. All rights reserved.
         </p>
 
         <!-- Support / legal links -->
         <nav class="footer-links" aria-label="Support and legal links">
+          <!-- combine with class="footer__links" -->
             <ul role="list">
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
-                <li><a href="/privacy">Privacy Policy</a></li>
-                <li><a href="/terms">Terms of Use</a></li>
+                <li><a href="./about/index.html">About</a></li>
+                <li><a href="./contact/index.html">Contact</a></li>
+                <li><a href="./privacy/index.html">Privacy</a></li>
+                <li><a href="./terms/index.html">Terms</a></li>
             </ul>
         </nav>
 
     </footer>
-    
+
 </body>
 </html>

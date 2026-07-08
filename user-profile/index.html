@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
@@ -31,6 +32,8 @@
     <script type="module" src="./js/filter-collapse.js" defer></script>
 
 </head>
+
+
 <body>
 
     <!-- =============================================
@@ -67,63 +70,222 @@
 
 <section class="profile-section">
 
-  <!-- PROFILE CARD -->
-  <div class="profile-card">
 
-    <!-- AVATAR -->
-    <div class="profile-avatar">
-        <img src="../images/user.png" alt="Profile image">
-    </div>
+<div class="profile-card">
 
-    <!-- INFO -->
-    <div class="profile-info">
 
-      <h2 id="profileName">Daniel Nthengu</h2>
 
-      <p id="profileMajor">
-        Computer Science • Senior
-      </p>
+<div class="profile-avatar">
 
-      <p class="profile-meta">
-        Member since 2025
-      </p>
 
-      <!-- STATS -->
-      <div class="profile-stats">
+<img
 
-        <div>
-          <span class="stat-number">12</span>
-          <span class="stat-label">Listings</span>
-        </div>
+src="../images/user.png"
 
-        <div>
-          <span class="stat-number">8</span>
-          <span class="stat-label">Sold</span>
-        </div>
+alt="Profile photo">
 
-        <div>
-          <span class="stat-number">5</span>
-          <span class="stat-label">Favorites</span>
-        </div>
 
-      </div>
+</div>
 
-    </div>
 
-    <!-- ACTIONS -->
-    <div class="profile-actions">
 
-      <button id="editProfileBtn" class="btn-primary">
-        Edit Profile
-      </button>
 
-      <button class="btn-secondary">
-        New Listing
-      </button>
 
-    </div>
 
-  </div>
+<div class="profile-info">
+
+
+<h2 id="profileName">
+
+Daniel Nthengu
+
+</h2>
+
+
+
+
+<p id="profileMajor">
+
+Computer Science • Senior
+
+</p>
+
+
+
+
+<p class="profile-meta">
+
+Member since 2025
+
+</p>
+
+
+
+
+
+<div class="profile-stats">
+
+
+
+<div>
+
+<strong class="stat-number">
+
+12
+
+</strong>
+
+<span class="stat-label">
+
+Listings
+
+</span>
+
+</div>
+
+
+
+
+
+<div>
+
+<strong class="stat-number">
+
+8
+
+</strong>
+
+<span class="stat-label">
+
+Sold
+
+</span>
+
+</div>
+
+
+
+
+
+<div>
+
+<strong class="stat-number">
+
+5
+
+</strong>
+
+<span class="stat-label">
+
+Favorites
+
+</span>
+
+</div>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="profile-actions">
+
+
+<a
+
+href="../sell-new-item/index.html"
+
+class="btn-primary">
+
+New Listing
+
+</a>
+
+
+
+
+<button
+
+id="editProfileBtn"
+
+class="btn-secondary">
+
+Edit Profile
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- LISTINGS -->
+
+
+<section class="profile-listings">
+
+
+
+<div class="section-header">
+
+
+<h2>
+
+My Listings
+
+</h2>
+
+
+</div>
+
+
+
+
+
+
+
+<ul
+
+id="item-grid"
+
+class="item-grid"
+
+role="list">
+
+
+<!-- JavaScript loads items -->
+
+</ul>
+
+
+
+
 
 </section>
     <main>
@@ -262,25 +424,32 @@
     <footer>
 
         <!-- Site name / brand -->
+        <!-- combine with class="footer__brand" -->
         <p class="footer-brand">Student Store</p>
 
         <!-- Copyright — JS can replace the year dynamically:
              document.querySelector('.footer__year').textContent = new Date().getFullYear(); -->
-        <p class="footer-copyright">
-            &copy; <span class="footer-year">2026</span> Student Store. All rights reserved.
+      
+        <!-- combine with class="footer-copyright" -->
+        <p class="footer__copyright">
+            ©
+            <span class="footer__year"></span>
+            Student Store. All rights reserved.
         </p>
 
         <!-- Support / legal links -->
         <nav class="footer-links" aria-label="Support and legal links">
+          <!-- combine with class="footer__links" -->
             <ul role="list">
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
-                <li><a href="/privacy">Privacy Policy</a></li>
-                <li><a href="/terms">Terms of Use</a></li>
+                <li><a href="./about/index.html">About</a></li>
+                <li><a href="./contact/index.html">Contact</a></li>
+                <li><a href="./privacy/index.html">Privacy</a></li>
+                <li><a href="./terms/index.html">Terms</a></li>
             </ul>
         </nav>
 
     </footer>
-    
+  
 </body>
+
 </html>

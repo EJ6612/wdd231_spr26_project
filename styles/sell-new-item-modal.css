@@ -14,10 +14,10 @@
 }
 
 .sell-modal-content {
-    background-color: white;
+    background-color: var(--color-white);
     margin: 15% auto;
     padding: 20px;
-    border: 2px solid darkcyan;
+    border: 2px solid var(--color-primary);
     width: 80%;
     border-radius: 12px;
 }

@@ -1,6 +1,8 @@
+@import './unified.css';
+
 @import './header.css';
 @import './footer.css';
-@import './unified.css';
+@import './filter.css';
 @import './itemcard.css';
 @import './new-item-button.css';
 @import './sell-new-item-modal.css';
@@ -12,20 +14,15 @@
 
 body {
     margin: 0;
-    background: #f7f9fb;
-    color: #1a1a2e;
-    font-size: 1rem;
     line-height: 1.5;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-
+    margin: 0 auto;
+    gap: 2.5rem;
     max-width: 1200px;
-    margin: auto;
-    padding: 2rem;
 }
 
 
@@ -34,25 +31,23 @@ main {
 ========================= */
 
 .landing {
-    padding: 3rem 1rem;
     text-align: center;
+    padding: 3.5rem 1rem 3rem;
 }
 
 .landing h2 {
-    margin-bottom: 1rem;
+    color: var(--color-primary-darker);
+     margin-bottom: 1rem;
 
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 800;
 }
 
-.landing__description {
+.landing p {
+    color: var(--color-ink);
     max-width: 650px;
-    margin: auto;
-
-    color: #666;
-    font-size: 1.1rem;
+    margin: 0 auto 2rem;
 }
-
 
 /* =========================
    FEED LAYOUT
@@ -60,7 +55,8 @@ main {
 
 .feed {
     display: grid;
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 14rem 1fr;
+    grid-template-rows: auto;
     gap: 2rem;
 
     align-items: start;
@@ -161,67 +157,28 @@ main {
 /* =========================
    ITEM GRID
 ========================= */
-
 .item-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1.5rem;
-
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: 1.25rem;
+    align-items: start;
     margin: 0;
     padding: 0;
+    grid-column: 2;
 
-    list-style: none;
 }
-
-
-/* =========================
-   FLOATING SELL BUTTON
-========================= */
-
-.floating-add-btn {
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 60px;
-    height: 60px;
-
-    background: cadetblue;
-    color: white;
-
-    border-radius: 50%;
-
-    font-size: 2rem;
-    text-decoration: none;
-
-    box-shadow: 0 10px 25px #0003;
-}
-
 
 /* =========================
    MOBILE
 ========================= */
-
-@media (max-width: 800px) {
-
+@media (max-width: 640px) {
     main {
-        padding: 1rem;
+        padding: 1.25rem 1rem 3rem;
+        gap: 1.5rem;
     }
 
     .feed {
         grid-template-columns: 1fr;
+        gap: 1.25rem;
     }
-
-    .filter-panel {
-        position: static;
-    }
-
-    .filter-panel__list {
-        flex-direction: column;
-    }
-
 }

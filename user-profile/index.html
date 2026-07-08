@@ -29,7 +29,17 @@
     <link rel="stylesheet" href="../styles/homepage.css" />
     <link rel="stylesheet" href="../styles/user.css" />
     <script type="module" src="../js/populate_user_feed.js"></script>
-    <script type="module" src="./js/filter-collapse.js" defer></script>
+    <script type="module" src="../js/filter-collapse.js" defer></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+        rel="stylesheet"
+    >
 
 </head>
 
@@ -41,31 +51,57 @@
          Contains the site identity, search, and
          account controls.
          ============================================= -->
-    <header>
+        <header>
 
-        <h1>
-            <a href="../index.html">Student Store</a>
-        </h1>
+        <div class="header-top">
 
-        <form class="search-form" role="search" action="#">
-            <input
-                id="search-input"
-                type="search"
-                name="q"
-                placeholder="Search listings..."
-                aria-label="Search listings"
+            <h1 class="site-logo">
+                <a href="../">
+                    Student Store
+                </a>
+            </h1>
+
+            <form
+                class="search-form"
+                role="search"
+            >
+                <input
+                    id="search-input"
+                    type="search"
+                    autocomplete="off"
+                    placeholder="Search for textbooks, tech, furniture..."
+                    aria-label="Search listings"
                 >
-            <button type="submit" aria-label="Submit search">🔎</button>
-        </form>
 
-        <!-- TODO Account (at some point, have a dropdown for this) -->
-        <nav class="account-nav" aria-label="Account">
-            <!-- <a href="signup.html">Account</a> -->
-            <a href="./user-profile" class="btn btn--account">😶</a>
+                <button
+                    type="submit"
+                    aria-label="Search"
+                >🔍</button>
+            </form>
+
+            <nav class="account-nav"
+                 aria-label="Account" >
+                <a
+                    href="../user-profile/"
+                    class="btn--account" >
+                        <span class="material-symbols-outlined">account_circle</span>
+                        Account
+                </a>
+            </nav>
+
+        </div>
+
+        <nav
+            class="main-nav"
+            aria-label="Main navigation"
+        >
+            <a href="../">Home</a>
+            <!-- <a href="../browse/index.html">Browse</a> -->
+            <a href="../sell-new-item/">Sell</a>
+            <a href="../user-profile/">Profile</a>
+            <a href="../about/">About</a>
         </nav>
-         <!-- <button class="bg-blue-600 text-white px-4 py-2 rounded-lg">
-      Account
-    </button> -->
+
     </header>
 
 <section class="profile-section">

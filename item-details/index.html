@@ -27,6 +27,16 @@
     <title>Student Store | Item Details</title>
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="../js/populate_item_details.js" defer></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+        rel="stylesheet"
+    >
 </head>
 <body>
 
@@ -35,26 +45,57 @@
          Contains the site identity, search, and
          account controls.
          ============================================= -->
-    <header>
+        <header>
 
-        <h1><a href="../index.html">Student Store</a></h1>
+        <div class="header-top">
 
-        <form class="search-form" role="search" action="#" method="#">
-            <input
-                id="search-input"
-                type="search"
-                name="q"
-                placeholder="Search listings..."
-                aria-label="Search listings"
+            <h1 class="site-logo">
+                <a href="../">
+                    Student Store
+                </a>
+            </h1>
+
+            <form
+                class="search-form"
+                role="search"
+            >
+                <input
+                    id="search-input"
+                    type="search"
+                    autocomplete="off"
+                    placeholder="Search for textbooks, tech, furniture..."
+                    aria-label="Search listings"
                 >
-            <button type="submit" aria-label="Submit search">🔎</button>
-        </form>
 
-        <!-- Account -->
-        <nav class="account-nav" aria-label="Account">
-            <a href="#" class="btn btn--account">😶</a>
+                <button
+                    type="submit"
+                    aria-label="Search"
+                >🔍</button>
+            </form>
+
+            <nav class="account-nav"
+                 aria-label="Account" >
+                <a
+                    href="../user-profile/"
+                    class="btn--account" >
+                        <span class="material-symbols-outlined">account_circle</span>
+                        Account
+                </a>
+            </nav>
+
+        </div>
+
+        <nav
+            class="main-nav"
+            aria-label="Main navigation"
+        >
+            <a href="../">Home</a>
+            <!-- <a href="../browse/index.html">Browse</a> -->
+            <a href="../sell-new-item/">Sell</a>
+            <a href="../user-profile/">Profile</a>
+            <a href="../about/">About</a>
         </nav>
-        
+
     </header>
 
     <main>

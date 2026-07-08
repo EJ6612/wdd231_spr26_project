@@ -23,9 +23,15 @@
 
 
 
-<link
-href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
-rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+        rel="stylesheet"
+    >
 
 
 </head>
@@ -41,145 +47,62 @@ rel="stylesheet">
 
 
 <!-- HEADER -->
-
-
-<header>
-
-
-<div class="header-top">
-
-
-<h1 class="site-logo">
-
-<a href="../index.html">
-
-Student Store
-
-</a>
-
-</h1>
-
-
-
-
-
-
-<form class="search-form">
-
-
-<button>
-
-🔍
-
-</button>
-
-
-
-<input
-
-type="search"
-
-placeholder="Search listings...">
-
-
-</form>
-
-
-
-
-
-
-<nav class="account-nav">
-
-
-<a
-
-class="btn--account"
-
-href="../user-profile/index.html">
-
-
-Account
-
-
-</a>
-
-
-</nav>
-
-
-
-</div>
-
-
-
-
-
-
-
-<nav class="main-nav">
-
-
-<a href="../index.html">
-
-Home
-
-</a>
-
-
-
-<a href="../browse/index.html">
-
-Browse
-
-</a>
-
-
-
-
-<a href="../sell-new-item/index.html">
-
-Sell
-
-</a>
-
-
-
-<a href="../user-profile/index.html">
-
-Profile
-
-</a>
-
-
-
-<a href="./index.html">
-
-About
-
-</a>
-
-
-</nav>
-
-
-
-
-</header>
-
-
-
-
-
-
+    <header>
+
+        <div class="header-top">
+
+            <h1 class="site-logo">
+                <a href="../">
+                    Student Store
+                </a>
+            </h1>
+
+            <form
+                class="search-form"
+                role="search"
+            >
+                <input
+                    id="search-input"
+                    type="search"
+                    autocomplete="off"
+                    placeholder="Search for textbooks, tech, furniture..."
+                    aria-label="Search listings"
+                >
+
+                <button
+                    type="submit"
+                    aria-label="Search"
+                >🔍</button>
+            </form>
+
+            <nav class="account-nav"
+                 aria-label="Account" >
+                <a
+                    href="../user-profile/"
+                    class="btn--account" >
+                        <span class="material-symbols-outlined">account_circle</span>
+                        Account
+                </a>
+            </nav>
+
+        </div>
+
+        <nav
+            class="main-nav"
+            aria-label="Main navigation"
+        >
+            <a href="../">Home</a>
+            <!-- <a href="../browse/index.html">Browse</a> -->
+            <a href="../sell-new-item/">Sell</a>
+            <a href="../user-profile/">Profile</a>
+            <a href="../about/">About</a>
+        </nav>
+
+    </header>
 
 
 
 <main class="about-page">
-
-
-
-
 
 <section class="landing">
 

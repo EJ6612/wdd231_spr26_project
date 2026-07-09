@@ -169,6 +169,7 @@
     .filter-panel {
         position: sticky;
         z-index: 50;
+        top: 12rem;
         box-shadow: 0 6px 24px var(--color-shadow-lite);
     }
 

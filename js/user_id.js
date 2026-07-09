@@ -812,3 +812,108 @@ export function getOrCreateUserID() {
 
     return userID;
 }
+
+function getStoredAvatar(userId) {
+  return localStorage.getItem(`avatar:${userId}`);
+}
+
+function storeAvatar(userId, markup) {
+  localStorage.setItem(`avatar:${userId}`, markup);
+}
+
+
+function getAvatarLetter(userID) {
+    const parts = userID.split("-");
+
+    if (parts.length >= 2) {
+        return parts[1][0];
+    }
+    return userID[0];
+}
+
+function hashString(str) {
+  let hash = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    hash = (hash << 5) - hash + str.charCodeAt(i);
+    hash |= 0; // force 32-bit integer
+  }
+
+  return Math.abs(hash);
+}
+
+const avatarColors = [
+  "#ff3131", 
+  "#ff8427", 
+  "#ffca2b",
+  "#c2e82c",
+  "#89e33a", 
+  "#3edb39", 
+  "#30dd75", 
+  "#27d4b4", 
+  "#26cbd0", 
+  "#0fabca", 
+  "#2f9de1", 
+  "#2f6ce6", 
+  "#513ae3", 
+  "#913ae3", 
+  "#d83ae3", 
+  "#e33aa2", 
+  "#e33264"
+];
+
+function getAvatarColor(userId) {
+  const hash = hashString(userId);
+  return avatarColors[hash % avatarColors.length];
+}
+
+function createAvatarMarkup(userId) {
+  const letter = getAvatarLetter(userId);
+  const bgColor = getAvatarColor(userId);
+
+  return `
+    <div
+      style="
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: ${bgColor};
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 36px;
+        font-weight: bold;
+        user-select: none;
+        text-transform: uppercase;
+      "
+    >
+      ${letter}
+    </div>
+  `;
+}
+
+export function renderUserAvatar(userId, containerSelector, profilePicture = null) {
+  const container = document.querySelector(containerSelector);
+
+  if (!container) return;
+
+  if (profilePicture) {
+    container.innerHTML = `
+      <img
+        src="${profilePicture}"
+        alt="Profile picture"
+      />
+    `;
+    return;
+  }
+
+  let savedAvatar = getStoredAvatar(userId);
+
+  if (savedAvatar) {
+    savedAvatar = createAvatarMarkup(userId);
+    storeAvatar(userId, savedAvatar);
+  }
+
+  container.innerHTML = savedAvatar;
+}

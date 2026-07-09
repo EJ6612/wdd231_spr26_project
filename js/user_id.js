@@ -910,7 +910,7 @@ export function renderUserAvatar(userId, containerSelector, profilePicture = nul
 
   let savedAvatar = getStoredAvatar(userId);
 
-  if (savedAvatar) {
+  if (!savedAvatar) {
     savedAvatar = createAvatarMarkup(userId);
     storeAvatar(userId, savedAvatar);
   }

@@ -28,7 +28,7 @@
     <title>Student Store</title>
     <link rel="stylesheet" href="../styles/homepage.css" />
     <link rel="stylesheet" href="../styles/user.css" />
-    <script type="module" src="../js/populate_user_feed.js"></script>
+    <script type="module" src="../js/populate_user_feed.js" defer></script>
     <script type="module" src="../js/filter-collapse.js" defer></script>
 
     <link
@@ -46,12 +46,12 @@
 
 <body>
 
-    <!-- =============================================
+    <!--
          HEADER
          Contains the site identity, search, and
          account controls.
-         ============================================= -->
-        <header>
+         -->
+    <header>
 
         <div class="header-top">
 
@@ -138,98 +138,22 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="profile-actions">
+            <a href="../sell-new-item/"
+               class="btn-primary">New Listing</a>
 
+            <!-- <button id="editProfileBtn"
+                         class="btn-secondary">Edit Profile</button> -->
 
-    <a
-
-    href="../sell-new-item/index.html"
-
-    class="btn-primary">
-
-    New Listing
-
-    </a>
-
-
-
-
-    <button
-
-    id="editProfileBtn"
-
-    class="btn-secondary">
-
-    Edit Profile
-
-    </button>
-
-
-
+        </div>
     </div>
-
-
-
-
-
-
-    </div>
-
-
 </section>
 
-
-
-
-
-
-
-
-<!-- LISTINGS -->
-
-
-<section class="profile-listings">
-
-
-
-<div class="section-header">
-
-
-<h2>
-
-My Listings
-
-</h2>
-
-
-</div>
-
-
-
-
-
-
-
-<ul
-
-id="item-grid"
-
-class="item-grid"
-
-role="list">
-
-
-<!-- JavaScript loads items -->
-
-</ul>
-
-
-
-
-
-</section>
-    <main>
+<main>
+    <div class="section-header">
+        <h2>My Listings</h2>
+    </div>
         <!-- Feed -->
             <!-- Filter -->
                 <!-- Categories -->
@@ -244,7 +168,6 @@ role="list">
              as a template reference for the JS renderer.
              ============================================= -->
         <section class="feed" aria-labelledby="feed-title">
-            <h2 id="feed-title" class="visually-hidden">Browse Listings</h2>
 
             <!-- -----------------------------------------
                  FILTER PANEL
@@ -337,28 +260,23 @@ role="list">
                 </div>
             </aside>
 
+            <section>
 
-            <!-- -----------------------------------------
-                 ITEM GRID
-                 JS (feed.js) empties this container and
-                 injects rendered item cards on page load
-                 and whenever filters change.
+                <h2 class="visually-hidden">
+                    Listings
+                </h2>
 
-                 The card below is a single static EXAMPLE
-                 showing the expected card structure. The
-                 JS renderer should produce identical markup
-                 for each item it injects.
-                 ----------------------------------------- -->
-            <ul id="item-grid" class="item-grid" role="list" aria-label="Listings">
+                <ul
+                    id="item-grid"
+                    class="item-grid"
+                    role="list"
+                ></ul>
 
-            </ul>
-            <!-- End #item-grid -->
+            </section>
 
         </section>
-        <!-- End .feed -->
 
     </main>
-
     <!-- =============================================
          FOOTER
          ============================================= -->

@@ -11,7 +11,7 @@ header {
     background-color: var(--color-primary);
     color: var(--color-white);
 
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .30);
 }
 
 
@@ -39,7 +39,7 @@ header {
 }
 
 .site-logo a {
-    color: white;
+    color: var(--color-white);
 
     font-size: 1.5rem;
     font-weight: 800;
@@ -47,48 +47,56 @@ header {
 }
 
 
-/* ===========================
-   SEARCH BAR
-=========================== */
-
-.search-form {
+/* Search bar */
+header .search-form {
     display: flex;
     flex: 1;
-
-    max-width: 650px;
-    margin: auto;
+    max-width: 32rem;
 }
 
-.search-form input[type="search"] {
-    flex: 1;
+header .search-form input {
+    flex: 1 1 auto;
+    height: 2.25rem;
+    padding: 0 0.875rem;
 
-    height: 42px;
+    font-size: 0.9rem;
+    color: var(--color-ink);
+    background-color: var(--color-surface);
+    border: 2px solid transparent;
+    border-radius: 6px 0 0 6px;
+    outline: none;
+    transition: background-color 0.2s ease, border-color 0.15s ease;
+}
+
+header .search-form input:focus { 
+    border-color: var(--color-primary-dark);
+    background-color: var(--color-white);
+}
+
+header .search-form input:hover { 
+    border-color: var(--color-primary-dark);
+    background-color: var(--color-white);
+}
+
+header .search-form button {
+    height: 2.25rem;
     padding: 0 1rem;
-
+    font-size: 0.9rem;
+    font-weight: 600;
+    background-color: var(--color-surface);
     border: none;
-    border-radius: 8px 0 0 8px;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    white-space: nowrap;
     outline: none;
 
-    color: #222;
-    font-size: .95rem;
+    transition: background-color 0.2s ease;
 }
 
-.search-form button {
-    height: 42px;
-    padding: 0 1rem;
-
-    border: none;
-    border-radius: 0 8px 8px 0;
-
-    background: white;
-    color: cadetblue;
-
-    cursor: pointer;
+header .search-form button:hover { 
+    background-color: var(--color-primary-dark);
 }
-
-.search-form button:hover {
-    background: #eee;
-}
+/* ------ */
 
 
 /* ===========================

@@ -8,9 +8,7 @@
 @import './sell-new-item-modal.css';
 
 
-/* =========================
-   GLOBAL
-========================= */
+/* ---- GLOBAL ---- */
 
 body {
     margin: 0;
@@ -22,13 +20,12 @@ main {
     flex-direction: column;
     margin: 0 auto;
     gap: 2.5rem;
-    max-width: 1200px;
+    padding: 2rem 2rem 4rem;
+    max-width: 75rem;
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* ---- HERO ---- */
 
 .landing {
     text-align: center;
@@ -49,37 +46,31 @@ main {
     margin: 0 auto 2rem;
 }
 
-/* =========================
-   FEED LAYOUT
-========================= */
+/* ---- FEED LAYOUT ---- */
 
 .feed {
     display: grid;
     grid-template-columns: 14rem 1fr;
     grid-template-rows: auto;
-    gap: 2rem;
-
+    gap: 1.5rem;
     align-items: start;
 }
 
 
-/* =========================
-   ITEM GRID
-========================= */
+/* ---- ITEM GRID ---- */
 .item-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
     gap: 1.25rem;
     align-items: start;
-    margin: 0;
-    padding: 0;
     grid-column: 2;
-
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* ---- MOBILE ---- */
 @media (max-width: 640px) {
     main {
         padding: 1.25rem 1rem 3rem;

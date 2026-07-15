@@ -23,18 +23,20 @@ export function setupSearch(items, emptyMessage = "No listings found.") {
      *
      * @param {Array} itemsToRender
      */
-    function renderItems(itemsToRender) {
-        itemGrid.innerHTML = "";
+    async function renderItems(itemsToRender) {
+    itemGrid.innerHTML = "";
 
-        if (itemsToRender.length === 0) {
-            itemGrid.innerHTML = `<li class="no-results">${emptyMessage}</li>`;
-            return;
-        }
-
-        itemsToRender.forEach((item) => {
-            itemGrid.appendChild(populate_item_card(item));
-        });
+    if (itemsToRender.length === 0) {
+        itemGrid.innerHTML = `<li class="no-results">${emptyMessage}</li>`;
+        return;
     }
+
+    const cards = await Promise.all(
+        itemsToRender.map(item => populate_item_card(item))
+    );
+
+    cards.forEach(card => itemGrid.appendChild(card));
+}
 
     /**
      * Returns the currently selected categories.

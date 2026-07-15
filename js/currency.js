@@ -98,9 +98,16 @@ export default async (request, context) => {
     const url = new URL(request.url);
     const base = url.searchParams.get("base") || "USD";
 
-    const apiKey = Netlify.env.get("EXCHANGE_RATE_API_KEY");
-    const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${base}`;
+    const apiKey = process.env.VITE_EXCHANGE_RATE_API_KEY; // ✅ Node.js env var
 
+    if (!apiKey) {
+        return new Response(
+            JSON.stringify({ result: "error", message: "API key not configured" }),
+            { status: 500, headers: { "Content-Type": "application/json" } }
+        );
+    }
+
+    const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${base}`;
     const response = await fetch(apiUrl);
     const data = await response.json();
 

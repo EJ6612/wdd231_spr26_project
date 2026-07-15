@@ -36,8 +36,7 @@ export async function getExchangeRate(baseCurrency) {
         return parsed.rates;
     }
 
-    const response = await fetch(
-        `https://v6.exchangerate-api.com/v6/${import.meta.env.EXCHANGE_RATE_API_KEY}/latest/${baseCurrency}`);
+    const response = await fetch(`/api/get-rates?base=${baseCurrency}`);
 
     const data = await response.json();
 
@@ -93,3 +92,28 @@ export function convertPrice(price, fromCurrency, toCurrency, rates) {
     };
 
 }
+
+export default async (request) => {
+    const url = new URL(request.url);
+    const base = url.searchParams.get("base");
+
+    if (!base) {
+        return new Response(
+            JSON.stringify({ error: "Missing base currency" }),
+            { status: 400, headers: { "Content-Type": "application/json" } }
+        );
+    }
+
+    const apiKey = Netlify.env.get("EXCHANGE_RATE_API_KEY");
+    const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${base}`;
+
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+    return new Response(JSON.stringify(data), {
+        status: 200,
+        headers: { "Content-Type": "application/json" }
+    });
+};
+
+export const config = { path: "/api/get-rates" };

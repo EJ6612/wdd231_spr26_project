@@ -94,16 +94,9 @@ export function convertPrice(price, fromCurrency, toCurrency, rates) {
 
 }
 
-export default async (request) => {
+export default async (request, context) => {
     const url = new URL(request.url);
-    const base = url.searchParams.get("base");
-
-    if (!base) {
-        return new Response(
-            JSON.stringify({ error: "Missing base currency" }),
-            { status: 400, headers: { "Content-Type": "application/json" } }
-        );
-    }
+    const base = url.searchParams.get("base") || "USD";
 
     const apiKey = Netlify.env.get("EXCHANGE_RATE_API_KEY");
     const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${base}`;
@@ -112,9 +105,10 @@ export default async (request) => {
     const data = await response.json();
 
     return new Response(JSON.stringify(data), {
-        status: 200,
         headers: { "Content-Type": "application/json" }
     });
 };
 
-export const config = { path: "/api/get-rates" };
+export const config = {
+    path: "/api/get-rates"
+};

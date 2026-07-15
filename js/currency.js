@@ -38,6 +38,12 @@ export async function getExchangeRate(baseCurrency) {
 
     const response = await fetch(`/api/get-rates?base=${baseCurrency}`);
 
+    // ✅ Add this — log what actually came back before trying to parse it
+    if (!response.ok) {
+        const text = await response.text();
+        throw new Error(`get-rates failed [${response.status}]: ${text}`);
+    }
+
     const data = await response.json();
 
         if (data.result !== 'success') {

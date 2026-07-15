@@ -26,22 +26,25 @@ export async function getUserCurrency() {
 
 export async function getExchangeRate(baseCurrency) {
     const RATES_EXPIRY_MS = 24 * 60 * 60 * 1000;
-    
     const storageKey = `exchange_rates_${baseCurrency}`;
 
     const cached = localStorage.getItem(storageKey);
     const parsed = cached ? JSON.parse(cached) : null;
-
     if (parsed && (Date.now() - parsed.timestamp) < RATES_EXPIRY_MS) {
         return parsed.rates;
     }
 
-    const response = await fetch(
-        `https://v6.exchangerate-api.com/v6/${process.env.VITE_EXCHANGE_RATE_API_KEY}/latest/${baseCurrency}`);
+    // ✅ Calls your own proxy — zero knowledge of the API key
+    const response = await fetch(`/api/get-rates?base=${baseCurrency}`);
+
+    if (!response.ok) {
+        const text = await response.text();
+        throw new Error(`get-rates failed [${response.status}]: ${text}`);
+    }
 
     const data = await response.json();
 
-        if (data.result !== 'success') {
+    if (data.result !== 'success') {
         throw new Error(`ExchangeRate API error: ${data['error-type']}`);
     }
 
@@ -50,7 +53,7 @@ export async function getExchangeRate(baseCurrency) {
         rates: data.conversion_rates
     }));
 
-    return data.conversion_rates;    
+    return data.conversion_rates;
 }
 
 export function convertPrice(price, fromCurrency, toCurrency, rates) {

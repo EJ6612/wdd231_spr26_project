@@ -36,13 +36,8 @@ export async function getExchangeRate(baseCurrency) {
         return parsed.rates;
     }
 
-    const response = await fetch(`/api/get-rates?base=${baseCurrency}`);
-
-    // ✅ Add this — log what actually came back before trying to parse it
-    if (!response.ok) {
-        const text = await response.text();
-        throw new Error(`get-rates failed [${response.status}]: ${text}`);
-    }
+    const response = await fetch(
+        `https://v6.exchangerate-api.com/v6/${import.meta.env.VITE_EXCHANGE_RATE_API_KEY}/latest/${baseCurrency}`);
 
     const data = await response.json();
 

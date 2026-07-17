@@ -26,25 +26,22 @@ export async function getUserCurrency() {
 
 export async function getExchangeRate(baseCurrency) {
     const RATES_EXPIRY_MS = 24 * 60 * 60 * 1000;
+    
     const storageKey = `exchange_rates_${baseCurrency}`;
 
     const cached = localStorage.getItem(storageKey);
     const parsed = cached ? JSON.parse(cached) : null;
+
     if (parsed && (Date.now() - parsed.timestamp) < RATES_EXPIRY_MS) {
         return parsed.rates;
     }
 
-    // ✅ Calls your own proxy — zero knowledge of the API key
-    const response = await fetch(`/api/get-rates?base=${baseCurrency}`);
-
-    if (!response.ok) {
-        const text = await response.text();
-        throw new Error(`get-rates failed [${response.status}]: ${text}`);
-    }
+    const response = await fetch(
+        `https://v6.exchangerate-api.com/v6/${import.meta.env.EXCHANGE_RATE_API_KEY}/latest/${baseCurrency}`);
 
     const data = await response.json();
 
-    if (data.result !== 'success') {
+        if (data.result !== 'success') {
         throw new Error(`ExchangeRate API error: ${data['error-type']}`);
     }
 
@@ -53,7 +50,7 @@ export async function getExchangeRate(baseCurrency) {
         rates: data.conversion_rates
     }));
 
-    return data.conversion_rates;
+    return data.conversion_rates;    
 }
 
 export function convertPrice(price, fromCurrency, toCurrency, rates) {
@@ -97,28 +94,5 @@ export function convertPrice(price, fromCurrency, toCurrency, rates) {
 
 }
 
-export default async (request, context) => {
-    const url = new URL(request.url);
-    const base = url.searchParams.get("base") || "USD";
 
-    const apiKey = process.env.VITE_EXCHANGE_RATE_API_KEY; // ✅ Node.js env var
-
-    if (!apiKey) {
-        return new Response(
-            JSON.stringify({ result: "error", message: "API key not configured" }),
-            { status: 500, headers: { "Content-Type": "application/json" } }
-        );
-    }
-
-    const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${base}`;
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-
-    return new Response(JSON.stringify(data), {
-        headers: { "Content-Type": "application/json" }
-    });
-};
-
-export const config = {
-    path: "/api/get-rates"
-};
+// API URL is messed up- it's calling upon itself

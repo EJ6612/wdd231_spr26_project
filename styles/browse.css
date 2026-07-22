@@ -1,167 +1,205 @@
 /* ==============================================
    BROWSE PAGE
+   Hero + Filters + Results
 ============================================== */
-
-
-/*
-   Browse reuses:
-   - header.css
-   - footer.css
-   - unified.css
-   - homepage layout
-*/
-
-
-
-
 
 
 /* ==============================================
-   BROWSE HERO
+   HERO SECTION
 ============================================== */
-
 
 .browse-hero {
 
-    text-align:center;
+    text-align: center;
+
+    max-width: 760px;
+
+    margin: 0 auto;
 
     padding:
-        var(--space-xl)
-        var(--space-md);
+        3.5rem
+        1rem
+        2.5rem;
 
 }
-
 
 
 .browse-hero h2 {
 
+    color:
+        var(--color-primary-darker);
+
     font-size:
-        clamp(2rem,5vw,3rem);
+        clamp(2rem, 5vw, 3rem);
 
+    font-weight:
+        800;
 
-    font-weight:800;
+    line-height:
+        1.1;
 
-
-    margin-bottom:
-        var(--space-md);
+    margin:
+        0 0 1rem;
 
 }
-
 
 
 .browse-hero p {
 
-    max-width:650px;
-
-    margin:auto;
-
     color:
-        var(--color-ink-muted);
+        var(--color-ink);
 
-    font-size:1.1rem;
+    max-width:
+        650px;
+
+    margin:
+        0 auto;
+
+    font-size:
+        1.1rem;
 
 }
 
 
 
+/* ==============================================
+   FEED LAYOUT
+============================================== */
 
 
+.feed {
+
+    display:grid;
+
+    grid-template-columns:
+        16rem 1fr;
+
+    gap:
+        2rem;
+
+    align-items:start;
+
+}
 
 
 
 /* ==============================================
-   BROWSE FILTER PANEL
+   FILTER PANEL
 ============================================== */
 
 
-.browse .filter-panel {
-
+.filter-panel {
 
     background:
         var(--color-white);
-
-
-    border-radius:
-        var(--radius-lg);
 
 
     border:
         1px solid var(--color-border);
 
 
+    border-radius:
+        var(--radius-lg);
+
+
     padding:
-        var(--space-lg);
+        1.5rem;
 
 
     box-shadow:
         var(--shadow-sm);
+
+
+    position:sticky;
+
+    top:6rem;
 
 }
 
 
 
 
+.filter-panel__heading {
 
 
-.browse .filter-panel__heading {
+    color:
+        var(--color-primary-darker);
+
+
+    font-size:
+        1.1rem;
+
+
+    font-weight:
+        800;
+
+
+    margin:
+
+        0 0 1rem;
+
+
+}
+
+
+
+.filter-panel__list {
+
+    list-style:none;
+
+    padding:0;
+
+    margin:
+        0 0 2rem;
+
+}
+
+
+
+.filter-panel__list li {
+
+    margin-bottom:
+        .75rem;
+
+}
+
+
+
+
+.filter-panel label {
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.65rem;
 
 
     color:
         var(--color-ink);
 
 
-    font-size:1.15rem;
+    font-weight:
+        600;
 
 
-    font-weight:800;
+    cursor:pointer;
 
-
-    margin-bottom:
-        var(--space-md);
 
 }
 
 
 
+.filter-panel input[type="checkbox"] {
 
 
+    width:
+        1.1rem;
 
 
-
-/* ==============================================
-   CHECKBOXES
-============================================== */
-
-
-.browse .filter-panel__list label {
-
-
-    transition:
-        var(--transition-fast);
-
-}
-
-
-
-.browse .filter-panel__list label:hover {
-
-
-    color:
-        var(--color-primary);
-
-}
-
-
-
-
-
-
-.browse .filter-panel input[type="checkbox"] {
-
-
-    width:18px;
-
-    height:18px;
+    height:
+        1.1rem;
 
 
     accent-color:
@@ -173,103 +211,118 @@
 
 
 
-
-
-
-
 /* ==============================================
-   PRICE INPUTS
+   PRICE SECTION
 ============================================== */
 
 
-.browse .price-range {
+.price-range {
 
 
-    display:grid;
+    display:flex;
 
+    gap:.75rem;
 
-    grid-template-columns:
-        1fr 1fr;
-
-
-    gap:
-        var(--space-sm);
+    margin-bottom:
+        1.25rem;
 
 }
 
 
 
-
-
-
-.browse .price-range input {
+.price-range input {
 
 
     width:100%;
 
 
-    height:40px;
-
-
-    border-radius:
-        var(--radius-sm);
+    padding:
+        .65rem;
 
 
     border:
         1px solid var(--color-border);
 
 
-    padding:
-        0 var(--space-sm);
+    border-radius:
+        var(--radius-md);
+
+
+    background:
+        var(--color-surface);
+
+
+    color:
+        var(--color-ink);
+
 
 }
 
 
 
+.price-range input:focus {
 
 
-
-.browse .price-range input:focus {
+    outline:none;
 
 
     border-color:
         var(--color-primary);
 
+
 }
-
-
-
-
 
 
 
 
 
 /* ==============================================
-   APPLY BUTTON
+   FILTER BUTTON
 ============================================== */
 
 
-.browse .btn--apply-filters {
+.btn--apply-filters {
 
 
-    margin-top:
-        var(--space-md);
+    width:100%;
+
+
+    padding:
+        .75rem;
+
+
+    border:none;
+
+
+    border-radius:
+        var(--radius-md);
 
 
     background:
         var(--color-primary);
 
 
+    color:
+        var(--color-white);
+
+
+    font-weight:
+        700;
+
+
+    cursor:pointer;
+
+
     transition:
-        var(--transition-fast);
+        background .2s ease,
+        transform .2s ease;
+
 
 }
 
 
 
-
-.browse .btn--apply-filters:hover {
+.btn--apply-filters:hover {
 
 
     background:
@@ -277,58 +330,26 @@
 
 
     transform:
-        translateY(-1px);
+        translateY(-2px);
+
 
 }
-
-
-
-
-
 
 
 
 
 /* ==============================================
-   EMPTY STATE
+   RESULTS AREA
 ============================================== */
 
 
-.no-results,
-.empty-state {
+.browse-results {
 
 
-    grid-column:
-        1 / -1;
-
-
-    text-align:center;
-
-
-    padding:
-        var(--space-xl);
-
-
-    color:
-        var(--color-ink-muted);
-
-
-    background:
-        var(--color-white);
-
-
-    border-radius:
-        var(--radius-lg);
-
+    min-width:
+        0;
 
 }
-
-
-
-
-
-
-
 
 
 
@@ -340,11 +361,34 @@
 @media(max-width:800px){
 
 
-    .browse .price-range {
+    .feed {
 
 
         grid-template-columns:
             1fr;
+
+
+    }
+
+
+
+    .filter-panel {
+
+
+        position:
+            static;
+
+
+    }
+
+
+
+    .price-range {
+
+
+        flex-direction:
+            column;
+
 
     }
 

@@ -1,6 +1,99 @@
 /* ==============================================
-   FOOTER SHELL
+   MAIN CSS
+   Global Website Shell
+   Header + Navigation + Footer
 ============================================== */
+
+
+/* ==============================================
+   HEADER
+============================================== */
+
+header {
+    width: 100%;
+}
+
+
+/* Logo */
+.header__logo {
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+
+/* Mobile Menu Button */
+
+.mobile-menu-btn {
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: .25rem;
+
+    background: transparent;
+
+    border: none;
+
+    color: var(--color-white);
+
+    cursor: pointer;
+
+}
+
+
+.mobile-menu-btn span {
+
+    font-size: 2rem;
+
+}
+
+
+
+/* ==============================================
+   NAVIGATION
+============================================== */
+
+
+.nav {
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.nav a {
+
+    color: var(--color-white);
+
+    text-decoration: none;
+
+}
+
+
+
+/* Mobile Navigation */
+
+@media(max-width:768px){
+
+    .mobile-menu-btn {
+
+        display:flex;
+
+    }
+
+}
+
+
+
+/* ==============================================
+   FOOTER
+============================================== */
+
 
 footer {
 
@@ -12,9 +105,7 @@ footer {
 
     flex-wrap:wrap;
 
-
     gap:1rem 2rem;
-
 
     padding:
         1.5rem
@@ -22,15 +113,15 @@ footer {
 
 
     background:
-        var(--color-primary-deeper);
+        var(--color-primary);
 
 
     border-top:
-        3px solid var(--color-primary);
+        3px solid var(--color-primary-dark);
 
 
     color:
-        rgba(255,255,255,.65);
+        rgba(255,255,255,.85);
 
 
     font-size:.875rem;
@@ -39,12 +130,7 @@ footer {
 
 
 
-
-
-/* ==============================================
-   BRAND
-============================================== */
-
+/* Footer Brand */
 
 .footer__brand {
 
@@ -52,16 +138,13 @@ footer {
 
     flex-shrink:0;
 
-
     color:
         var(--color-white);
 
 
     font-size:1.1rem;
 
-
     font-weight:800;
-
 
     letter-spacing:.03em;
 
@@ -69,28 +152,18 @@ footer {
 
 
 
-
-
-
-
-/* ==============================================
-   COPYRIGHT
-============================================== */
-
+/* Footer Copyright */
 
 .footer__copyright {
 
     flex:1;
 
-
     margin:0;
-
 
     text-align:center;
 
-
     color:
-        rgba(255,255,255,.5);
+        rgba(255,255,255,.75);
 
 
     font-size:.8rem;
@@ -99,15 +172,7 @@ footer {
 
 
 
-
-
-
-
-
-/* ==============================================
-   FOOTER LINKS
-============================================== */
-
+/* Footer Links */
 
 .footer__links {
 
@@ -125,14 +190,11 @@ footer {
 
     flex-wrap:wrap;
 
-
     gap:.25rem;
-
 
     margin:0;
 
     padding:0;
-
 
     list-style:none;
 
@@ -146,18 +208,16 @@ footer {
 
     align-items:center;
 
-
     padding:.35rem .65rem;
 
 
     color:
-        rgba(255,255,255,.6);
+        rgba(255,255,255,.85);
 
 
     font-size:.8rem;
 
     font-weight:600;
-
 
     text-decoration:none;
 
@@ -174,26 +234,20 @@ footer {
 
 
 
-
-
 .footer__links a:hover {
-
 
     color:
         var(--color-white);
 
 
     background:
-        rgba(255,255,255,.12);
+        rgba(255,255,255,.15);
 
 }
 
 
 
-
-
 .footer__links a:focus-visible {
-
 
     outline:
         2px solid var(--color-primary-light);
@@ -206,10 +260,8 @@ footer {
 
 
 
-
-
 /* ==============================================
-   MOBILE FOOTER
+   RESPONSIVE HEADER + FOOTER
 ============================================== */
 
 
@@ -218,58 +270,41 @@ footer {
 
     footer {
 
-
         flex-direction:column;
-
 
         justify-content:center;
 
-
         text-align:center;
-
 
         padding:
             1.5rem
             1rem;
 
-
-        gap:
-            .9rem;
+        gap:.9rem;
 
     }
 
 
-
-
     .footer__brand {
-
 
         font-size:1rem;
 
     }
 
 
-
-
     .footer__copyright {
 
-
         order:3;
-
 
         font-size:.75rem;
 
     }
 
 
-
     .footer__links ul {
-
 
         justify-content:center;
 
     }
-
-
 
 }

@@ -1,103 +1,389 @@
+/* ==============================================
+   PROFILE PAGE
+============================================== */
+
 .profile-section {
-    padding: 2rem;
+
+    padding:
+        var(--space-xl)
+        var(--space-md);
+
 }
+
+
 
 .profile-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
 
-    background: var(--color-white);
-    border-radius: 12px;
-    padding: 2rem;
+    display:flex;
 
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:
+        var(--space-lg);
+
+
+    background:
+        var(--color-white);
+
+
+    border:
+        1px solid var(--color-border);
+
+
+    border-radius:
+        var(--radius-lg);
+
+
+    padding:
+        var(--space-lg);
+
+
+    box-shadow:
+        var(--shadow-sm);
+
+
+    max-width:1200px;
+
+    margin:auto;
+
 }
 
-/* AVATAR */
+
+
+
+
+/* ==============================================
+   AVATAR
+============================================== */
+
+
 .profile-avatar {
-    width: 100px;
-    height: 100px;
 
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--color-border);
+    width:110px;
+
+    height:110px;
+
+
+    flex-shrink:0;
+
+
+    border-radius:50%;
+
+
+    background:
+        var(--color-surface);
+
+
+    border:
+        3px solid var(--color-border);
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    overflow:hidden;
+
 }
 
-/* INFO */
+
+
+
+
+/* ==============================================
+   PROFILE INFO
+============================================== */
+
+
 .profile-info {
-    flex: 1;
+
+    flex:1;
+
 }
+
+
 
 .profile-info h2 {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: 700;
+
+    margin:0;
+
+    color:
+        var(--color-primary-darker);
+
+
+    font-size:
+        clamp(1.4rem,3vw,2rem);
+
+
+    font-weight:800;
+
 }
+
+
 
 .profile-info p {
-    margin: 0.25rem 0;
-    color: #64748b;
+
+    margin-top:.35rem;
+
+
+    color:
+        var(--color-ink-muted);
+
 }
 
-/* STATS */
-.profile-stats {
-    display: flex;
-    gap: 2rem;
-    margin-top: 1rem;
+
+
+
+
+.profile-meta {
+
+    font-size:.9rem;
+
 }
+
+
+
+
+
+/* ==============================================
+   PROFILE STATS
+============================================== */
+
+
+.profile-stats {
+
+    display:flex;
+
+    gap:
+        var(--space-lg);
+
+
+    margin-top:
+        var(--space-md);
+
+}
+
+
 
 .profile-stats div {
-    text-align: center;
+
+    min-width:70px;
+
+    text-align:center;
+
 }
+
+
+
+
 
 .stat-number {
-    display: block;
-    font-size: 1.25rem;
-    font-weight: 700;
+
+    display:block;
+
+
+    font-size:1.4rem;
+
+
+    font-weight:800;
+
+
+    color:
+        var(--color-primary-darker);
+
 }
+
+
 
 .stat-label {
-    font-size: 0.85rem;
-    color: #64748b;
+
+    display:block;
+
+
+    margin-top:.25rem;
+
+
+    font-size:.85rem;
+
+
+    color:
+        var(--color-ink-muted);
+
 }
 
-/* ACTIONS */
+
+
+
+
+/* ==============================================
+   PROFILE ACTIONS
+============================================== */
+
+
 .profile-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+
+    display:flex;
+
+    align-items:center;
+
 }
 
-/* BUTTONS */
+
+
+
+
+/* ==============================================
+   BUTTONS
+============================================== */
+
+
 .btn-primary {
-    background: var(--color-primary);
-    color: white;
-    text-decoration: none;
 
-    border: none;
-    padding: 0.5rem 1rem;
+    display:inline-flex;
 
-    border-radius: 8px;
-    cursor: pointer;
+    align-items:center;
+
+    justify-content:center;
+
+
+    background:
+        var(--color-primary);
+
+
+    color:
+        var(--color-white);
+
+
+    text-decoration:none;
+
+
+    font-weight:700;
+
+
+    padding:
+        .65rem
+        1.2rem;
+
+
+    border-radius:
+        var(--radius-md);
+
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+
 }
+
+
 
 .btn-primary:hover {
-    background: var(--color-primary-dark);
+
+
+    background:
+        var(--color-primary-dark);
+
+
+    transform:
+        translateY(-2px);
+
 }
+
+
+
+
 
 .btn-secondary {
-    background: #f1f5f9;
-    color: #0f172a;
 
-    border: none;
-    padding: 0.5rem 1rem;
+    background:
+        var(--color-surface);
 
-    border-radius: 8px;
-    cursor: pointer;
+
+    color:
+        var(--color-ink);
+
+
+    padding:
+        .65rem
+        1.2rem;
+
+
+    border-radius:
+        var(--radius-md);
+
+
+    font-weight:600;
+
+
+    border:
+        1px solid var(--color-border);
+
+
+    cursor:pointer;
+
 }
 
+
+
 .btn-secondary:hover {
-    background: #e2e8f0;
+
+    background:
+        var(--color-border);
+
+}
+
+
+
+
+
+/* ==============================================
+   MOBILE
+============================================== */
+
+
+@media(max-width:800px){
+
+
+    .profile-card {
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+
+
+    .profile-stats {
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+    }
+
+
+
+    .profile-actions {
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+
+
+    .btn-primary {
+
+        width:100%;
+
+    }
+
+
 }

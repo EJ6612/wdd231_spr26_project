@@ -19,7 +19,8 @@
     <!-- Shared Styles -->
     <link rel="stylesheet" href="../styles/homepage.css">
     <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/footer.css">
+    
+	<link rel="stylesheet" href="../styles/main.css">
 
     <!-- Page Styles -->
     <link rel="stylesheet" href="styles.css">
@@ -38,62 +39,112 @@
 
 <body class="min-h-screen flex flex-col">
 
-<!-- ======================================================
-HEADER
-====================================================== -->
-    <header>
+<!-- ==============================================
+     HEADER
+============================================== -->
 
-        <div class="header-top">
+<header>
 
-            <h1 class="site-logo">
-                <a href="../">
-                    Student Store
-                </a>
-            </h1>
+    <div class="header-top">
 
-            <!-- <form
-                class="search-form"
-                role="search"
-            >
-                <input
-                    id="search-input"
-                    type="search"
-                    autocomplete="off"
-                    placeholder="Search for textbooks, tech, furniture..."
-                    aria-label="Search listings"
-                >
+        <!-- Logo -->
+        <h1 class="site-logo">
+            <a href="../index.html">
+                Student Store
+            </a>
+        </h1>
 
-                <button
-                    type="submit"
-                    aria-label="Search"
-                >🔍</button>
-            </form> -->
+        <!-- Mobile Menu -->
+        <button
+            class="mobile-menu-btn"
+            id="mobile-menu-btn"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-controls="main-nav"
+            aria-expanded="false">
 
-            <nav class="account-nav"
-                    aria-label="Account" >
-                <a
-                    href="../user-profile/"
-                    class="btn--account" >
-                        <span class="material-symbols-outlined">account_circle</span>
-                        Account
-                </a>
-            </nav>
+            <span class="material-symbols-outlined">
+                menu
+            </span>
 
-        </div>
+        </button>
 
+        <!-- Search -->
+        <form
+            class="search-form"
+            role="search">
+
+            <input
+                id="search-input"
+                type="search"
+                autocomplete="off"
+                placeholder="Search textbooks, tech, furniture..."
+                aria-label="Search listings">
+
+            <button
+                type="submit"
+                aria-label="Search">
+
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+
+            </button>
+
+        </form>
+
+        <!-- Account -->
         <nav
-            class="main-nav"
-            aria-label="Main navigation"
-        >
-            <a href="../">Home</a>
-            <!-- <a href="../browse/index.html">Browse</a> -->
-            <a href="../sell-new-item/">Sell</a>
-            <a href="../user-profile/">Profile</a>
-            <a href="../about/">About</a>
+            class="account-nav"
+            aria-label="Account">
+
+            <a
+                href="../user-profile/index.html"
+                class="btn--account">
+
+                <span class="material-symbols-outlined">
+                    account_circle
+                </span>
+
+                Account
+
+            </a>
+
         </nav>
 
-    </header>
+    </div>
 
+    <!-- Main Navigation -->
+    <nav
+        id="main-nav"
+        class="main-nav"
+        aria-label="Main navigation">
+
+        <a href="../index.html">
+            Home
+        </a>
+
+        <a href="../library/browse.html">
+            Browse
+        </a>
+
+        <a
+            href="../library/sell-new-item.html"
+            class="active">
+            Sell
+        </a>
+
+        <a href="../library/profile.html">
+            Profile
+        </a>
+
+        <a href="../library/about.html">
+            About
+        </a>
+
+    </nav>
+
+</header>
 <!-- ======================================================
 MAIN
 ====================================================== -->
@@ -334,34 +385,51 @@ MAIN
 </main>
 
 <!-- ========================= FOOTER (IMPROVED) ========================= -->
-    <footer>
+  <!-- ==============================================
+     FOOTER
+============================================== -->
 
-        <!-- Site name / brand -->
-        <!-- combine with class="footer__brand" -->
-        <p class="footer-brand">Student Store</p>
+<footer>
 
-        <!-- Copyright — JS can replace the year dynamically:
-             document.querySelector('.footer__year').textContent = new Date().getFullYear(); -->
-      
-        <!-- combine with class="footer-copyright" -->
-        <p class="footer__copyright">
-            ©
-            <span class="footer__year"></span>
-            Student Store. All rights reserved.
-        </p>
+    <p class="footer__brand">
+        Student Store
+    </p>
 
-        <!-- Support / legal links -->
-        <nav class="footer-links" aria-label="Support and legal links">
-          <!-- combine with class="footer__links" -->
-            <ul role="list">
-                <li><a href="./about/index.html">About</a></li>
-                <li><a href="./contact/index.html">Contact</a></li>
-                <li><a href="./privacy/index.html">Privacy</a></li>
-                <li><a href="./terms/index.html">Terms</a></li>
-            </ul>
-        </nav>
+    <p class="footer__copyright">
 
-    </footer>
+        ©
+        <span class="footer__year"></span>
+        Student Store. All rights reserved.
+
+    </p>
+
+    <nav
+        class="footer__links"
+        aria-label="Footer navigation">
+
+        <ul>
+
+            <li>
+                <a href="../about/index.html">
+                    About
+                </a>
+            </li>
+
+            
+
+            <li>
+                <a href="../privacy/index.html">
+                    Privacy
+                </a>
+            </li>
+
+            
+
+        </ul>
+
+    </nav>
+
+</footer>
 
 </body>
 </html>

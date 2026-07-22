@@ -1,15 +1,13 @@
-import data from "../json/items.json" with { type: "json" };
+import data from "../json/items.json" with {type:"json"};
 
 import {
     createCard
-} from "./populate_home.js";
+} from "./item-card.js";
 
 
 import {
     setupSearch
 } from "./search.js";
-
-
 
 
 
@@ -19,46 +17,30 @@ const grid =
 
 
 
-
-
-function removeExpiredSoldItems(items) {
+function removeExpiredSoldItems(items){
 
 
     const today =
         new Date();
 
 
+    return items.filter(item=>{
 
-    return items.filter(item => {
 
-
-        if(item.status !== "sold") {
-
+        if(item.status !== "sold"){
             return true;
-
         }
 
 
-
-        if(!item.soldAt) {
-
+        if(!item.soldAt){
             return false;
-
         }
-
-
-
-        const soldDate =
-            new Date(item.soldAt);
-
-
 
 
         const age =
-            (today - soldDate)
-            /
-            (1000 * 60 * 60 * 24);
-
+        (today - new Date(item.soldAt))
+        /
+        (1000*60*60*24);
 
 
 
@@ -72,19 +54,14 @@ function removeExpiredSoldItems(items) {
 
 
 
-
-
-
-
-function displayItems(items) {
+function displayItems(items){
 
 
     grid.replaceChildren();
 
 
 
-
-    if(!items.length) {
+    if(!items.length){
 
 
         const empty =
@@ -108,25 +85,16 @@ function displayItems(items) {
 
 
 
-
-
-
-    items.forEach(item => {
-
+    items.forEach(item=>{
 
         grid.appendChild(
             createCard(item)
         );
 
-
     });
 
 
-
 }
-
-
-
 
 
 
@@ -137,11 +105,7 @@ const activeItems =
 
 
 
-
-
 displayItems(activeItems);
-
-
 
 
 
@@ -149,3 +113,6 @@ setupSearch(
     activeItems,
     "No listings found."
 );
+import {
+    setupFilters
+} from "./filters.js";

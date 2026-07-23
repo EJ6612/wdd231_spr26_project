@@ -1,27 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta 
-        name="viewport" 
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Student Store | Campus Marketplace</title>
 
-    <meta
-        name="description"
-        content="Buy and sell textbooks, electronics, furniture and more with students."
-    >
-
-   <link rel="stylesheet" href="./styles/main.css">
-<link rel="stylesheet" href="./styles/header.css">
-<link rel="stylesheet" href="./styles/homepage.css">
-<link rel="stylesheet" href="./styles/filter.css">
-<link rel="stylesheet" href="./styles/itemcard.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Store</title>
+    <meta name="description"
+          content="Buy and sell textbooks, electronics, furniture and more with students.">
+    <link rel="stylesheet" href="./styles/homepage.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <script type="module" src="./js/populate_home.js" defer></script>
+    <script type="module" src="./js/filter-collapse.js" defer></script>
+    <script type="module" src="./js/currency.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
@@ -33,387 +27,229 @@
         rel="stylesheet"
     >
 
-
-    <script
-        type="module"
-        src="./js/populate_home.js"
-        defer
-    ></script>
-
-    <script
-        src="./js/mobile-menu.js"
-        defer
-    ></script>
-
 </head>
-
 
 <body>
 
+    <header>
 
-<header>
+        <div class="header-top">
 
-    <div class="header-top">
+            <h1 class="site-logo">
+                <a href="../">
+                    Student Store
+                </a>
+            </h1>
 
-
-        <h1 class="site-logo">
-
-            <a href="./index.html">
-                Student Store
-            </a>
-
-        </h1>
-
-
-
-        <button
-            class="mobile-menu-btn"
-            id="mobile-menu-btn"
-            type="button"
-            aria-label="Toggle navigation"
-            aria-controls="main-nav"
-            aria-expanded="false"
-        >
-
-            <span class="material-symbols-outlined">
-                menu
-            </span>
-
-        </button>
-
-
-
-        <form
-            class="search-form"
-            id="search-form"
-            role="search"
-        >
-
-            <input
-                id="search-input"
-                name="search"
-                type="search"
-                autocomplete="off"
-                placeholder="Search for textbooks, tech, furniture..."
-                aria-label="Search listings"
+            <form
+                class="search-form"
+                role="search"
             >
+                <input
+                    id="search-input"
+                    type="search"
+                    autocomplete="off"
+                    placeholder="Search for textbooks, tech, furniture..."
+                    aria-label="Search listings"
+                >
 
+                <button
+                    type="submit"
+                    aria-label="Search"
+                >🔍</button>
+            </form>
 
-            <button
-                type="submit"
-                aria-label="Search"
-            >
-                🔍
-            </button>
+            <nav class="account-nav"
+                 aria-label="Account" >
+                <a
+                    href="
+                    ./user-profile/"
+                    class="btn--account" >
+                        <span class="material-symbols-outlined">account_circle</span>
+                        Account
+                </a>
+            </nav>
 
-
-        </form>
-
-
+        </div>
 
         <nav
-            class="account-nav"
-            aria-label="Account"
+            class="main-nav"
+            aria-label="Main navigation"
         >
-
-            <a
-                href="./library/profile.html"
-                class="btn--account"
-            >
-
-                <span class="material-symbols-outlined">
-                    account_circle
-                </span>
-
-                Account
-
-            </a>
-
+            <a href="../">Home</a>
+            <!-- <a href="../browse/index.html">Browse</a> -->
+            <a href="./sell-new-item/">Sell</a>
+            <a href="./user-profile/">Profile</a>
+            <a href="./about/">About</a>
         </nav>
 
+    </header>
 
-    </div>
+    <main>
 
+        <section class="landing">
 
+            <h2>Your Campus Marketplace</h2>
 
-
-
-    <nav
-        id="main-nav"
-        class="main-nav"
-        aria-label="Main navigation"
-    >
-
-        <a href="./index.html">
-            Home
-        </a>
-
-
-        <a href="./library/browse.html">
-            Browse
-        </a>
-
-
-        <a href="./library/sell-new-item.html">
-            Sell
-        </a>
-
-
-        <a href="./library/profile.html">
-            Profile
-        </a>
-
-
-        <a href="./library/about.html">
-            About
-        </a>
-
-
-    </nav>
-
-
-</header>
-
-
-
-
-
-<main>
-
-
-    <section class="landing">
-
-        <h2>
-            Your Campus Marketplace
-        </h2>
-
-
-        <p class="landing__description">
-
-            Buy and sell textbooks, electronics, furniture, and more —
-            all within our student community.
-
-        </p>
-
-    </section>
-
-
-
-
-
-    <section class="feed">
-
-
-        <aside class="filter-panel">
-
-
-            <h3 class="filter-panel__heading">
-                Categories
-            </h3>
-
-
-            <ul class="filter-panel__list">
-
-
-                <li>
-                    <label>
-                        <input
-                            type="checkbox"
-                            name="category"
-                            value="textbooks"
-                        >
-                        Textbooks
-                    </label>
-                </li>
-
-
-                <li>
-                    <label>
-                        <input
-                            type="checkbox"
-                            name="category"
-                            value="electronics"
-                        >
-                        Electronics
-                    </label>
-                </li>
-
-
-                <li>
-                    <label>
-                        <input
-                            type="checkbox"
-                            name="category"
-                            value="furniture"
-                        >
-                        Furniture
-                    </label>
-                </li>
-
-
-                <li>
-                    <label>
-                        <input
-                            type="checkbox"
-                            name="category"
-                            value="clothing"
-                        >
-                        Clothing
-                    </label>
-                </li>
-
-
-                <li>
-                    <label>
-                        <input
-                            type="checkbox"
-                            name="category"
-                            value="other"
-                        >
-                        Other
-                    </label>
-                </li>
-
-
-            </ul>
-
-
-
-
-
-            <h3 class="filter-panel__heading">
-                Price
-            </h3>
-
-
-            <div class="price-range">
-
-
-                <input
-                    id="min-price"
-                    name="min-price"
-                    type="number"
-                    placeholder="Min $"
-                >
-
-
-                <input
-                    id="max-price"
-                    name="max-price"
-                    type="number"
-                    placeholder="Max $"
-                >
-
-
-            </div>
-
-
-
-            <button
-                class="btn--apply-filters"
-                type="button"
-            >
-
-                Apply Filters
-
-            </button>
-
-
-        </aside>
-
-
-
-
-
-        <section>
-
-
-            <h2 class="visually-hidden">
-                Listings
-            </h2>
-
-
-            <ul
-                id="item-grid"
-                class="item-grid"
-                role="list"
-            ></ul>
-
+            <p class="landing__description">
+                Buy and sell textbooks, electronics, furniture, and more —
+                all within our student community.
+            </p>
 
         </section>
 
+        <!-- Feed -->
+            <!-- Filter -->
+                <!-- Categories -->
+                <!-- Price range (?) -->
+            <!-- Items -->
 
-    </section>
+             <!-- =============================================
+             FEED SECTION
+             Sidebar filter + item grid.
+             Items are injected by feed.js at runtime;
+             one static example card is included below
+             as a template reference for the JS renderer.
+             ============================================= -->
+        <section class="feed" aria-labelledby="feed-title">
 
+            <!-- -----------------------------------------
+                 FILTER PANEL
+                 JS should read these controls and re-query
+                 / re-render the #item-grid on change.
+                 TODO at some point, make collapsable
+                 ----------------------------------------- -->
+            <aside class="filter-panel" aria-label="Filter listings">
+                <button
+                    type="button"
+                    class="filter-panel__toggle"
+                    aria-expanded="false"
+                    aria-controls="filter-panel-content"
+                >
+                    <span class="filter-panel__heading">Filter</span>
+                    <span id="filter-panel-icon" class="filter-panel__heading" aria-hidden="true">−</span>
+                </button>
 
+                <!-- Categories
+                     Add / remove <li> items to match your
+                     category taxonomy in the database.      -->
+                <div id="filter-panel-content" class="filter-panel__content">
+                    <div class="filter-panel__inner">
+                        <fieldset class="filter-panel__group">
+                            <legend class="filter-panel_category">Category</legend>
+                            <ul class="filter-panel__list" role="list">
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="category" value="textbooks">
+                                        Textbooks
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="category" value="electronics">
+                                        Electronics
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="category" value="furniture">
+                                        Furniture
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="category" value="clothing">
+                                        Clothing
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="category" value="other">
+                                        Other
+                                    </label>
+                                </li>
+                            </ul>
+                        </fieldset>
 
+                        <!-- Price Range
+                            JS should debounce the 'input' event
+                            and update the #price-display label.    -->
+                        <fieldset class="filter-panel__group">
+                            <legend>Price Range</legend>
+                            <div class="price-range">
+                                <label for="price-min" class="visually-hidden">Minimum price</label>
+                                <input
+                                    id="price-min"
+                                    type="number"
+                                    name="price_min"
+                                    min="0"
+                                    placeholder="Min $"
+                                    aria-label="Minimum price"
+                                >
+                                <span aria-hidden="true">–</span>
+                                <label for="price-max" class="visually-hidden">Maximum price</label>
+                                <input
+                                    id="price-max"
+                                    type="number"
+                                    name="price_max"
+                                    min="0"
+                                    placeholder="Max $"
+                                    aria-label="Maximum price"
+                                >
+                            </div>
+                        </fieldset>
 
+                        <button type="button" class="btn--apply-filters">Apply Filters</button>
+                    </div>
+                </div>
+            </aside>
 
-    <a
-        href="./library/sell-new-item.html"
-        class="floating-add-btn"
-        aria-label="Sell item"
-    >
-        +
-    </a>
+            <section>
 
+                <h2 class="visually-hidden">
+                    Listings
+                </h2>
 
-</main>
+                <ul
+                    id="item-grid"
+                    class="item-grid"
+                    role="list"
+                ></ul>
 
+            </section>
 
+        </section>
 
+    </main>
 
+    <footer>
 
-<footer>
+        <!-- Site name / brand -->
+        <!-- combine with class="footer__brand" -->
+        <p class="footer-brand">Student Store</p>
 
+        <!-- Copyright — JS can replace the year dynamically:
+             document.querySelector('.footer__year').textContent = new Date().getFullYear(); -->
+      
+        <!-- combine with class="footer-copyright" -->
+        <p class="footer__copyright">
+            ©
+            <span class="footer__year"></span>
+            Student Store. All rights reserved.
+        </p>
 
-    <p class="footer__brand">
-        Student Store
-    </p>
+        <!-- Support / legal links -->
+        <nav class="footer-links" aria-label="Support and legal links">
+          <!-- combine with class="footer__links" -->
+            <ul role="list">
+                <li><a href="./about/index.html">About</a></li>
+                <li><a href="./contact/index.html">Contact</a></li>
+                <li><a href="./privacy/index.html">Privacy</a></li>
+                <li><a href="./terms/index.html">Terms</a></li>
+            </ul>
+        </nav>
 
-
-    <p class="footer__copyright">
-
-        ©
-        <span class="footer__year"></span>
-        Student Store. All rights reserved.
-
-    </p>
-
-
-
-    <nav
-        class="footer__links"
-        aria-label="Footer navigation"
-    >
-
-        <ul>
-
-
-            <li>
-                <a href="./library/about.html">
-                    About
-                </a>
-            </li>
-
-
-            <li>
-                <a href="./library/privacy-policy.html">
-                    Privacy
-                </a>
-            </li>
-
-
-        </ul>
-
-
-    </nav>
-
-
-</footer>
-
+    </footer>
 
 </body>
-
 </html>
-

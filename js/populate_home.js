@@ -7,11 +7,14 @@ const grid = document.querySelector("#item-grid");
 
 
 
+
+
 /*
     Remove sold items older than 7 days
 */
 
 function removeExpiredSoldItems(items) {
+
 
     const today = new Date();
 
@@ -20,22 +23,17 @@ function removeExpiredSoldItems(items) {
 
 
         if (item.status !== "sold") {
-
             return true;
-
         }
 
 
         if (!item.soldAt) {
-
             return false;
-
         }
 
 
         const soldDate =
             new Date(item.soldAt);
-
 
 
         const age =
@@ -44,13 +42,15 @@ function removeExpiredSoldItems(items) {
             (1000 * 60 * 60 * 24);
 
 
-
         return age < 7;
-
 
     });
 
 }
+
+
+
+
 
 
 
@@ -61,14 +61,13 @@ function removeExpiredSoldItems(items) {
 
 function createElement(
     tag,
-    className = "",
+    className,
     text = ""
 ) {
 
 
     const element =
         document.createElement(tag);
-
 
 
     if (className) {
@@ -79,14 +78,12 @@ function createElement(
     }
 
 
-
     if (text) {
 
         element.textContent =
             text;
 
     }
-
 
 
     return element;
@@ -97,14 +94,17 @@ function createElement(
 
 
 
+
+
+
 /*
-    Create item card
+    Create product card
 */
 
 function createCard(item) {
 
 
-    const card =
+    const li =
         createElement(
             "li",
             "item-card"
@@ -119,13 +119,9 @@ function createCard(item) {
         );
 
 
-
-    /*
-        Item details page
-    */
-
     link.href =
-        `./item-details/item-details.html?id=${item.id}`;
+        `./item/?id=${item.id}`;
+
 
 
 
@@ -155,7 +151,7 @@ function createCard(item) {
     image.onerror = () => {
 
         image.src =
-            "./images/placeholder.png";
+            "./assets/placeholder.png";
 
     };
 
@@ -163,11 +159,15 @@ function createCard(item) {
 
 
 
-    const content =
+
+
+    const body =
         createElement(
             "div",
             "item-card__body"
         );
+
+
 
 
 
@@ -180,12 +180,16 @@ function createCard(item) {
 
 
 
+
+
     const title =
         createElement(
             "h3",
             "item-card__title",
             item.title
         );
+
+
 
 
 
@@ -198,12 +202,16 @@ function createCard(item) {
 
 
 
+
+
     const price =
         createElement(
             "p",
             "item-card__price",
             `$${item.price}`
         );
+
+
 
 
 
@@ -216,7 +224,11 @@ function createCard(item) {
 
 
 
-    content.append(
+
+
+
+
+    body.append(
         category,
         title,
         description,
@@ -228,24 +240,26 @@ function createCard(item) {
 
 
 
+
+
     if (item.status === "sold") {
 
 
-        content.appendChild(
-
+        const sold =
             createElement(
                 "span",
                 "sold",
                 "SOLD"
-            )
+            );
 
-        );
+
+        body.appendChild(sold);
 
 
     } else {
 
 
-        const contactButton =
+        const button =
             createElement(
                 "button",
                 "item-card__contact-btn",
@@ -253,20 +267,18 @@ function createCard(item) {
             );
 
 
-
-        contactButton.type =
+        button.type =
             "button";
 
 
 
-        contactButton.addEventListener(
+        button.addEventListener(
             "click",
             event => {
 
                 event.preventDefault();
 
-
-                console.log(
+                alert(
                     `Contact seller about ${item.title}`
                 );
 
@@ -274,11 +286,11 @@ function createCard(item) {
         );
 
 
-        content.appendChild(
-            contactButton
-        );
+        body.appendChild(button);
 
     }
+
+
 
 
 
@@ -286,14 +298,15 @@ function createCard(item) {
 
     link.append(
         image,
-        content
+        body
     );
 
 
-    card.appendChild(link);
+    li.appendChild(link);
 
 
-    return card;
+
+    return li;
 
 }
 
@@ -301,43 +314,40 @@ function createCard(item) {
 
 
 
+
+
+
+
+
 /*
-    Display listings
+    Render items
 */
 
 function displayItems(items) {
-
-
-    if (!grid) {
-
-        return;
-
-    }
-
 
 
     grid.replaceChildren();
 
 
 
-
     if (!items.length) {
 
 
-        grid.appendChild(
-
+        const empty =
             createElement(
                 "p",
                 "empty-state",
                 "No listings available."
-            )
+            );
 
-        );
+
+        grid.appendChild(empty);
 
 
         return;
 
     }
+
 
 
 
@@ -347,38 +357,12 @@ function displayItems(items) {
 
 
         grid.appendChild(
-
             createCard(item)
-
         );
 
 
     });
 
-}
-
-
-
-
-
-/*
-    Footer year
-*/
-
-function updateFooterYear() {
-
-
-    const year =
-        document.querySelector(".footer__year");
-
-
-
-    if (year) {
-
-        year.textContent =
-            new Date().getFullYear();
-
-    }
 
 }
 
@@ -386,18 +370,17 @@ function updateFooterYear() {
 
 
 
+
+
+
+
 /*
-    Start application
+    Initialize
 */
 
 
 const activeItems =
-
-    Array.isArray(data)
-
-        ? removeExpiredSoldItems(data)
-
-        : [];
+    removeExpiredSoldItems(data);
 
 
 
@@ -405,15 +388,7 @@ displayItems(activeItems);
 
 
 
-if (typeof setupSearch === "function") {
-
-    setupSearch(
-        activeItems,
-        "No listings found."
-    );
-
-}
-
-
-
-updateFooterYear();
+setupSearch(
+    activeItems,
+    "No listings found."
+);

@@ -8,65 +8,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<title>Student Store | Browse Campus Items</title>
+<title>Student Store | Browse</title>
 
 
 <meta
-    name="description"
-    content="Browse textbooks, electronics, furniture and other student marketplace listings."
->
+name="description"
+content="Browse student marketplace listings including textbooks, electronics, furniture and more.">
 
 
-<!-- Global styles -->
 
-<link rel="stylesheet" href="../styles/unified.css">
-
-<link rel="stylesheet" href="../styles/main.css">
-
-<link rel="stylesheet" href="../styles/header.css">
-
-
-<!-- Page styles -->
-
+<link rel="stylesheet" href="../styles/homepage.css">
 <link rel="stylesheet" href="../styles/browse.css">
 
-<link rel="stylesheet" href="../styles/filter.css">
-
-<link rel="stylesheet" href="../styles/itemcard.css">
 
 
 <link
 href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
-rel="stylesheet"
->
+rel="stylesheet">
+
 
 
 <link
 href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-rel="stylesheet"
->
+rel="stylesheet">
 
 
 
 <script
 type="module"
 src="../js/populate_browse.js"
-defer
-></script>
-
-
-<script
-src="../js/mobile-menu.js"
-defer
-></script>
+defer>
+</script>
 
 
 </head>
 
 
 
+
+
 <body class="browse">
 
+
+
+
+
+
+<!-- ================= HEADER ================= -->
 
 
 <header>
@@ -75,69 +63,53 @@ defer
 <div class="header-top">
 
 
+
 <h1 class="site-logo">
 
 <a href="../index.html">
+
 Student Store
+
 </a>
 
 </h1>
 
 
 
-<button
-class="mobile-menu-btn"
-id="mobile-menu-btn"
-type="button"
-aria-label="Toggle navigation"
-aria-controls="main-nav"
-aria-expanded="false"
->
-
-<span class="material-symbols-outlined">
-menu
-</span>
-
-</button>
-
-
 
 
 <form
 class="search-form"
-id="search-form"
-role="search"
->
+role="search">
+
 
 
 <input
 
 id="search-input"
 
-name="search"
-
 type="search"
 
 autocomplete="off"
 
-placeholder="Search textbooks, tech, furniture..."
+placeholder="Search for textbooks, tech, furniture..."
 
-aria-label="Search listings"
+aria-label="Search listings">
 
->
+
 
 
 
 <button
-type="submit"
-aria-label="Search"
->
 
-<span class="material-symbols-outlined">
-search
-</span>
+type="submit"
+
+aria-label="Search">
+
+🔍
 
 </button>
+
 
 
 </form>
@@ -145,25 +117,40 @@ search
 
 
 
+
+
 <nav
 class="account-nav"
-aria-label="Account"
->
+aria-label="Account">
+
+
 
 <a
-href="./profile.html"
-class="btn--account"
->
+
+href="../user-profile/index.html"
+
+class="btn--account">
+
 
 <span class="material-symbols-outlined">
+
 account_circle
+
 </span>
+
 
 Account
 
+
 </a>
 
+
+
 </nav>
+
+
+
+
 
 
 </div>
@@ -172,46 +159,61 @@ Account
 
 
 
+
+
+
 <nav
-id="main-nav"
+
 class="main-nav"
-aria-label="Main navigation"
->
+
+aria-label="Main navigation">
+
 
 
 <a href="../index.html">
+
 Home
+
 </a>
 
 
 
-<a
-href="./browse.html"
-class="active"
->
+<a href="./index.html">
+
 Browse
+
 </a>
 
 
 
-<a href="./sell-new-item.html">
+<a href="../sell-new-item/index.html">
+
 Sell
+
 </a>
 
 
 
-<a href="./profile.html">
+<a href="../user-profile/index.html">
+
 Profile
+
 </a>
 
 
 
-<a href="./about.html">
+<a href="../about/index.html">
+
 About
+
 </a>
+
 
 
 </nav>
+
+
+
 
 
 
@@ -221,7 +223,19 @@ About
 
 
 
+
+
+
+
+<!-- ================= MAIN ================= -->
+
+
+
 <main>
+
+
+
+
 
 
 
@@ -229,18 +243,26 @@ About
 
 
 <h2>
+
 Browse Campus Items
+
 </h2>
+
+
+
 
 
 <p>
 
-Find textbooks, electronics, furniture, and more from students.
+Find textbooks, electronics, furniture and more from students.
 
 </p>
 
 
+
 </section>
+
+
 
 
 
@@ -252,36 +274,53 @@ Find textbooks, electronics, furniture, and more from students.
 
 
 
-<aside
-class="filter-panel"
-aria-label="Filter listings"
->
+
+
+
+
+<aside class="filter-panel">
+
+
+
 
 
 <h3 class="filter-panel__heading">
+
 Categories
+
 </h3>
+
+
+
+
 
 
 
 <ul class="filter-panel__list">
 
 
+
 <li>
 
 <label>
 
 <input
+
 type="checkbox"
+
 name="category"
-value="textbooks"
->
+
+value="textbooks">
+
 
 Textbooks
 
 </label>
 
+
 </li>
+
+
 
 
 
@@ -290,16 +329,22 @@ Textbooks
 <label>
 
 <input
+
 type="checkbox"
+
 name="category"
-value="electronics"
->
+
+value="electronics">
+
 
 Electronics
 
 </label>
 
+
 </li>
+
+
 
 
 
@@ -308,16 +353,22 @@ Electronics
 <label>
 
 <input
+
 type="checkbox"
+
 name="category"
-value="furniture"
->
+
+value="furniture">
+
 
 Furniture
 
 </label>
 
+
 </li>
+
+
 
 
 
@@ -326,16 +377,22 @@ Furniture
 <label>
 
 <input
+
 type="checkbox"
+
 name="category"
-value="clothing"
->
+
+value="clothing">
+
 
 Clothing
 
 </label>
 
+
 </li>
+
+
 
 
 
@@ -344,16 +401,23 @@ Clothing
 <label>
 
 <input
+
 type="checkbox"
+
 name="category"
-value="other"
->
+
+value="other">
+
 
 Other
 
 </label>
 
+
 </li>
+
+
+
 
 
 </ul>
@@ -362,9 +426,18 @@ Other
 
 
 
+
+
+
+
 <h3 class="filter-panel__heading">
+
 Price
+
 </h3>
+
+
+
 
 
 
@@ -372,35 +445,50 @@ Price
 <div class="price-range">
 
 
+
 <label
 class="visually-hidden"
-for="min-price"
->
+for="min-price">
+
 Minimum price
+
 </label>
 
 
+
 <input
+
 id="min-price"
+
 type="number"
-placeholder="Min $"
->
+
+placeholder="Min $">
+
+
 
 
 
 <label
 class="visually-hidden"
-for="max-price"
->
+for="max-price">
+
 Maximum price
+
 </label>
 
 
+
+
 <input
+
 id="max-price"
+
 type="number"
-placeholder="Max $"
->
+
+placeholder="Max $">
+
+
+
 
 
 </div>
@@ -409,14 +497,21 @@ placeholder="Max $"
 
 
 
+
+
+
 <button
+
 type="button"
-class="btn--apply-filters"
->
+
+class="btn--apply-filters">
 
 Apply Filters
 
 </button>
+
+
+
 
 
 
@@ -428,30 +523,51 @@ Apply Filters
 
 
 
-<section class="browse-results">
+
+
+<section>
 
 
 <h2 class="visually-hidden">
-Available Listings
+
+Listings
+
 </h2>
 
 
 
+
+
 <ul
+
 id="item-grid"
+
 class="item-grid"
-role="list"
->
+
+role="list">
+
+
 
 </ul>
 
 
 
-</section>
 
 
 
 </section>
+
+
+
+
+
+
+
+
+</section>
+
+
+
 
 
 
@@ -464,12 +580,26 @@ role="list"
 
 
 
+
+
+<!-- ================= FOOTER ================= -->
+
+
+
 <footer>
 
 
+
+
+
 <p class="footer__brand">
+
 Student Store
+
 </p>
+
+
+
 
 
 
@@ -488,43 +618,61 @@ Student Store. All rights reserved.
 
 
 
+
+
 <nav
+
 class="footer__links"
-aria-label="Footer navigation"
->
+
+aria-label="Footer">
+
 
 
 <ul>
 
 
 <li>
-
-<a href="./about.html">
+<a href="../about/index.html">
 About
 </a>
-
 </li>
-
 
 
 <li>
-
-<a href="./privacy-policy.txt">
-Privacy
+<a href="../contact/index.html">
+Contact
 </a>
-
 </li>
 
 
+<li>
+<a href="../privacy/index.html">
+Privacy
+</a>
+</li>
+
+
+<li>
+<a href="../terms/index.html">
+Terms
+</a>
+</li>
+
 
 </ul>
+
 
 
 </nav>
 
 
 
+
+
+
 </footer>
+
+
 
 
 

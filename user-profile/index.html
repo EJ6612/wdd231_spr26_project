@@ -30,6 +30,8 @@
     <link rel="stylesheet" href="../styles/user.css" />
     <script type="module" src="../js/populate_user_feed.js" defer></script>
     <script type="module" src="../js/filter-collapse.js" defer></script>
+    <script type="module" src="../js/mobile-menu.js" defer></script>
+
 
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
@@ -61,6 +63,17 @@
                 </a>
             </h1>
 
+            <button
+            class="hamburger-btn"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="main-nav"
+        >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
             <form
                 class="search-form"
                 role="search"
@@ -82,7 +95,8 @@
             <nav class="account-nav"
                  aria-label="Account" >
                 <a
-                    href="../user-profile/"
+                    href="
+                    ../user-profile/"
                     class="btn--account" >
                         <span class="material-symbols-outlined">account_circle</span>
                         Account
@@ -92,6 +106,7 @@
         </div>
 
         <nav
+            id="main-nav"
             class="main-nav"
             aria-label="Main navigation"
         >

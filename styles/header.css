@@ -242,7 +242,7 @@ header .search-form button:hover {
    MOBILE
  ----  */
 
-@media (max-width: 768px) {
+@media (max-width: 720px) {
 
     .header-top {
         flex-wrap: wrap;
@@ -258,17 +258,84 @@ header .search-form button:hover {
         max-width: none;
     }
 
+     /* --- Hamburger button: visible only on mobile --- */
+    .hamburger-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+
+        /* Push it to the right of the logo automatically */
+        margin-left: auto;
+
+        width: 2.25rem;
+        height: 2.25rem;
+        padding: 0.25rem;
+
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    .bar {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--color-white);
+        border-radius: 2px;
+        transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+
+    /* Animate bars → X when menu is open */
+    .hamburger-btn[aria-expanded="true"] .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger-btn[aria-expanded="true"] .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-btn[aria-expanded="true"] .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* --- Main nav: hidden by default, drops down when open --- */
     .main-nav {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         justify-content: flex-start;
-        gap: 1.5rem;
+        gap: 0;
 
-        overflow-x: auto;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 1.25rem;
 
-        padding: 0 1rem;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+
+     /* Open state — toggled by JS */
+    .main-nav.nav-open {
+        max-height: 300rem; /* tall enough for all links */
+        padding: 0.75rem 1.25rem;
     }
 
     .main-nav a {
-        white-space: nowrap;
+        padding: 0.6rem 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
 
+    .main-nav a:last-child {
+        border-bottom: none;
+    }
+
+}
+
+/* Hide hamburger on larger screens */
+@media (min-width: 720px) {
+    .hamburger-btn {
+        display: none;
+    }
 }

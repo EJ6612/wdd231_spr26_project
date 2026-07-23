@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="./styles/header.css" />
     <script type="module" src="./js/populate_home.js" defer></script>
     <script type="module" src="./js/filter-collapse.js" defer></script>
-    <script type="module" src="./js/currency.js" defer></script>
+    <script type="module" src="./js/mobile-menu.js" defer></script>
+    <!-- <script type="module" src="./js/currency.js" defer></script> -->
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
 
     <link
@@ -40,6 +41,17 @@
                     Student Store
                 </a>
             </h1>
+
+            <button
+            class="hamburger-btn"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="main-nav"
+        >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
 
             <form
                 class="search-form"
@@ -73,6 +85,7 @@
         </div>
 
         <nav
+            id="main-nav"
             class="main-nav"
             aria-label="Main navigation"
         >

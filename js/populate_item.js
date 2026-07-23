@@ -1,16 +1,10 @@
-import { getUserCurrency, getExchangeRate, convertPrice } from "./currency.js";
-
-export async function populate_item_card(data) {
+export function populate_item_card(data) {
 
     const itemData = data;
 
     const itemLI = document.createElement('li');
 
     itemLI.className = "item-card";
-
-    const userCurrency = await getUserCurrency();
-    const rates = await getExchangeRate(data.CURRENCY);
-    const priceInfo = convertPrice(data.PRICE, data.CURRENCY, userCurrency, rates);
 
     const contactsHTML = (data.CONTACT || []).map(contact =>
         `<button
@@ -71,8 +65,7 @@ export async function populate_item_card(data) {
                         </p>
 
                         <!-- Price -->
-                        <p class="item-card__price">${priceInfo.formattedConverted}</p>
-                        <p class="item-card__price">(${priceInfo.formattedOriginal})</p>
+                        <p class="item-card__price">${itemData.CURRENCY} $${itemData.PRICE}</p>
 
                         <!-- Seller info -->
                         <p class="item-card__seller">

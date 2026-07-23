@@ -27,6 +27,7 @@
     <title>Student Store | Item Details</title>
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="../js/populate_item_details.js" defer></script>
+    <script type="module" src="../js/mobile-menu.js" defer></script>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
@@ -45,7 +46,7 @@
          Contains the site identity, search, and
          account controls.
          ============================================= -->
-        <header>
+       <header>
 
         <div class="header-top">
 
@@ -54,6 +55,17 @@
                     Student Store
                 </a>
             </h1>
+
+            <button
+            class="hamburger-btn"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="main-nav"
+        >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
 
             <form
                 class="search-form"
@@ -76,7 +88,8 @@
             <nav class="account-nav"
                  aria-label="Account" >
                 <a
-                    href="../user-profile/"
+                    href="
+                    ../user-profile/"
                     class="btn--account" >
                         <span class="material-symbols-outlined">account_circle</span>
                         Account
@@ -86,6 +99,7 @@
         </div>
 
         <nav
+            id="main-nav"
             class="main-nav"
             aria-label="Main navigation"
         >

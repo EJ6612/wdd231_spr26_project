@@ -101,3 +101,13 @@
 .btn-secondary:hover {
     background: #e2e8f0;
 }
+
+/*  ---- 
+   MOBILE
+ ----  */
+
+@media (max-width: 720px) { 
+    .btn-primary {
+        visibility: collapse;
+    }
+}

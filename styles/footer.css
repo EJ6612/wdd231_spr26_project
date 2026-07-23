@@ -34,8 +34,13 @@ footer .footer-links {
     flex-shrink: 0;
 }
 
+ul {
+    list-style: none;
+}
+
 footer .footer-links ul {
     display: flex;
+    list-style: none;
     flex-wrap: wrap;
     align-items: center;
     gap: 0.25rem 0.15rem;
